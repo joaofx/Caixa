@@ -4,7 +4,7 @@
 - receita [OK]
 - gasto [OK]
 - transferência [OK]
-- fechar movimento
+- fechar movimento [OK]
 - fechar movimento com diferença
 - senha
 - refatorar
