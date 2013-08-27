@@ -1,0 +1,52 @@
+﻿@using Web.Controllers
+@model FecharMovimentoForm
+
+@{ ViewBag.Title = "Fechando Movimento de " + Model.MovimentoData; }
+
+<div class="flash alert">Há diferença no saldo informado e o registrado nas transações</div>
+
+<table class="list">
+    <tr>
+        <th></th>
+        <th>Saldo somado<br/> nas transações</th>
+        <th>Informado<br/>no fechamento</th>
+        <th>Diferença</th>
+    </tr>
+    <tr>
+        <td>Caixa</td>
+        <td class="right">@Show.Decimal(Model.Fechamento.SomaDoCaixa)</td>
+        <td class="right">@Show.Decimal(Model.Fechamento.SaldoInformadoCaixa)</td>
+        <td>@MostrarDiferenca(Model.Fechamento.DiferencaNoCaixa)</td>
+    </tr>
+    <tr>
+        <td>Conta Corrente</td>
+        <td class="right">@Show.Decimal(Model.Fechamento.SomaDaConta)</td>
+        <td class="right">@Show.Decimal(Model.Fechamento.SaldoInformadoConta)</td>
+        <td>@MostrarDiferenca(Model.Fechamento.DiferencaNaConta)</td>
+    </tr>
+</table>
+
+@using (Html.BeginForm<MovimentoController>(c => c.FecharComDiferenca(null), FormMethod.Post, new { @class = "center" }))
+{
+    @Html.HiddenFor(x => x.SaldoCaixa)
+    @Html.HiddenFor(x => x.SaldoConta)
+
+    <a href="@Url.Action("Index", "Transacao")">Revisar transações</a>
+    <input type="submit" class="button red" value="Fechar movimento mesmo com diferença" />
+}
+
+@helper MostrarDiferenca(decimal diferenca)
+    {
+    if (diferenca < 0)
+    {
+        <text>Está faltando @Show.Decimal(diferenca)</text>  
+    }
+    else if (diferenca > 0)
+    {
+        <text>Está sobrando @Show.Decimal(diferenca)</text>
+    }
+    else
+    {
+        <text>Ok</text>  
+    }
+}

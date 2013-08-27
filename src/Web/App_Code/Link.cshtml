@@ -1,0 +1,21 @@
+﻿@using System.Web.Mvc
+
+@helper FecharMovimento(UrlHelper url)
+{
+    <a href="@url.Action("Fechar", "Movimento")">Fechar Movimento Atual</a>
+}
+
+@helper AbrirMovimento(UrlHelper url)
+{
+    <a href="@url.Action("Abrir", "Movimento")">Abrir Movimento</a>
+}
+
+@helper Transacoes(UrlHelper url)
+{
+    <a href="@url.Action("Index", "Transacao")">Transações</a>
+}
+
+@helper FluxoCaixa(UrlHelper url)
+{
+    <a href="@url.Action("Index", "FluxoCaixa")">Fluxo de Caixa</a>
+}

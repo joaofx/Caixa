@@ -1,0 +1,19 @@
+﻿@model FecharMovimentoForm
+@{ ViewBag.Title = "Fechar Movimento " + Model.MovimentoData; }
+
+@using (Html.BeginForm("Fechar", "Movimento"))
+{
+    <div class="form">
+        <p>
+            <div class="label">@Html.LabelFor(x => x.SaldoCaixa)</div>
+            <div>@Html.TextBoxFor(x => x.SaldoCaixa)</div>
+        </p>
+        <p>
+            <div class="label">@Html.LabelFor(x => x.SaldoConta)</div>
+            <div>@Html.TextBoxFor(x => x.SaldoConta)</div>
+        </p>
+        <p>
+            <input type="submit" value="Fechar Movimento">        
+        </p>
+    </div>
+}

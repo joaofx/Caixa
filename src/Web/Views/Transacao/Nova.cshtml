@@ -1,0 +1,19 @@
+﻿@{ ViewBag.Title = "Nova Transação"; }
+
+<h3>Aconteceu qual tipo de transação?</h3>
+    
+<p>
+    <a href="@Url.Action("Conta", "Transacao", new { Tipo = TipoTransacao.Gasto })" class="gasto-link">Foi <b>gasto</b> dinheiro através de compras, pagamentos e etc?</a>
+</p>
+    
+<p>
+    <a href="@Url.Action("Conta", "Transacao", new { Tipo = TipoTransacao.Recebimento })" class="recebimento-link">Foi <b>recebido</b> dinheiro através de venda ou empréstimo ou outra situação?</a>
+</p>
+    
+<p>
+    <a href="@Url.Action("Transferencia", "Transacao", new { Tipo = TipoTransacao.Saque })">Foi feito um <b>saque</b> da <b>conta corrente?</b></a>
+</p>
+    
+<p>
+    <a href="@Url.Action("Transferencia", "Transacao", new { Tipo = TipoTransacao.Deposito })">Foi feito um <b>depósito</b> na <b>conta corrente?</b></a>
+</p>

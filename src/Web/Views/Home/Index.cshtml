@@ -1,0 +1,29 @@
+﻿@{ ViewBag.Title = "Resumo"; }
+
+@if (this.Movimento() != null)
+{
+    <table class="list" style="width: 50%">
+        <tr>
+            <td>Movimento atual</td>
+            <td>@this.Movimento().Data.Show()</td>
+        </tr>
+    </table>
+    
+    <p>
+        <ul>
+            <li>@Link.Transacoes(Url)</li>
+            <li>@Link.FluxoCaixa(Url)</li>
+            <li>@Link.FecharMovimento(Url)</li>
+        </ul>
+    </p>
+}
+else
+{
+    <div class="flash info">
+        Não há movimento aberto
+    </div>
+
+    <p>
+        @Link.AbrirMovimento(Url)
+    </p>
+}

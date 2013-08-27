@@ -1,0 +1,41 @@
+﻿@using Nails.Framework
+@using Core.Models
+
+@functions {
+
+    private static string GetLabelText(MovimentoStatus status)
+    {
+        switch (status)
+        {
+            case MovimentoStatus.Aberto:
+                return "label-green";
+            case MovimentoStatus.Fechado:
+                return "label-blue";
+            case MovimentoStatus.FechadoComDiferenca:
+                return "label-red";
+            default:
+                return string.Empty;
+        }
+    }
+    
+}
+
+@helper Conta(Conta conta)
+{
+    <span class="conta-@conta.Id">@conta.Nome</span>
+}
+
+@helper StatusMovimento(Movimento movimento)
+{
+    var labelClass = GetLabelText(movimento.Status);
+    <span class="@labelClass">@movimento.Status.ToString().PascalToSentence()</span>
+}
+
+@helper Decimal(decimal value)
+{
+    if (value != 0)
+    {
+        var spanClass = value > 0 ? "positive" : "negative";
+        <span class="@spanClass">@value.Show()</span>
+    }
+}

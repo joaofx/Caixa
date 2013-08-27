@@ -1,0 +1,22 @@
+﻿@model TransacaoCategoriaForm
+@{ ViewBag.Title = "Nova Transação"; }
+
+<p>
+    Tipo da transação: <span class="highlight">@Model.Tipo</span><br/>
+    Conta: <span class="highlight">@Model.Conta.Nome</span>
+</p>
+
+<h3>Qual a finalidade do gasto ou de onde veio dinheiro?</h3>
+    
+@foreach(var categoria in Model.Categorias)
+{
+    <p>
+        <span class="disabled">@categoria.Nome</span>  
+    </p>
+
+    foreach (var subCategoria in categoria.SubCategorias)
+    {
+        <text>&nbsp;&nbsp;&nbsp;&nbsp;</text>
+        <a href="@Url.Action("Valor", "Transacao", new { Model.Tipo, Model.ContaId, CategoriaId = subCategoria.Id })">@subCategoria.Nome</a><br/>
+    }
+}

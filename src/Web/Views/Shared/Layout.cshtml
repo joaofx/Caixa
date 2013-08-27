@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Macarrão</title>
+        <link href="@Url.Content("~/Content/Layout.css")" media="all" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+
+        <div id="top">
+            <div style="float: left; margin-bottom: 5px">
+                <h1>Macarrão Na Rua</h1>
+            </div>
+            <div style="float: right; margin-bottom: 5px">
+                Logado como Carla 
+                <span style="margin-left: 10px">
+                    <a href="@Url.Action("Trocar", "Senha")">Trocar senha</a>
+                </span>
+                <span style="margin-left: 20px">
+                    <a href="@Url.Action("Sair", "Login")" class="button">Sair</a>
+                </span>
+            </div>
+        </div>
+        
+        @RenderPage("Menu.cshtml")
+       
+        <div id="title">
+            
+            @if (IsSectionDefined("contextual"))
+            {
+                <div class="contextual">
+                    @RenderSection("contextual", required: false)
+                </div>
+            }
+
+            @if (ViewBag.Title != null)
+            {
+                <h2 id="title">@ViewBag.Title</h2>    
+            }
+            
+        </div>
+
+		<div id="content">
+        
+           
+            @Html.GetSuccess()
+            @Html.GetError()
+            @Html.GetAlert()
+            @Html.ShowValidationSummary()
+
+            @RenderBody()
+
+			<div style="clear:both;"></div>
+
+		</div>
+
+        <div id="bottom"></div>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-2.0.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/application.js")"></script>
+
+</body>
+</html>

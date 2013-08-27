@@ -1,0 +1,64 @@
+﻿@model TransacaoIndexView
+@{
+    ViewBag.SideBar = false;
+    ViewBag.Title = "Transações do dia " + Model.MovimentoAtual.Data.Show();
+}
+
+@section contextual
+{
+    @Link.FecharMovimento(Url)
+}
+
+<div>
+    <div class="contextual">
+        <a href="@Url.Action("Nova", "Transacao", new { Tipo = TipoTransacao.Gasto })" class="icon icon-despesa">Novo Gasto</a>
+        <a href="@Url.Action("Nova", "Transacao", new { Tipo = TipoTransacao.Recebimento })" class="icon icon-receita">Novo Recebimento</a>
+        <a href="@Url.Action("Nova", "Transferencia")" class="icon icon-transf">Nova Transferência</a>
+    </div>
+
+    @using (Html.BeginForm("Index", "Transacao", FormMethod.Get))
+    {
+        <text>@Html.LabelFor(x => x.Conta):</text>
+            
+        @Html.DropDownListFor(x => x.Conta,
+            new SelectList(Model.Contas, "Id", "Nome", Model.Conta), "(Todas)", new { style = "width: 200px" })
+
+        <input type="submit" value="Filtrar" />
+    }
+</div>
+
+@if (Model.Transacoes.Count == 0)
+{
+    <div class="flash nodata">Não há transações cadastradas</div>
+}
+else
+{
+    <table class="list fixed">
+        <colgroup>
+            <col width="200px">
+            <col width="250px">
+            <col width="150px">
+            <col width="300px">
+        </colgroup>
+        <tr>
+            <th>Conta</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+            <th></th>
+        </tr>
+        @foreach (var transacao in Model.Transacoes)
+        {
+            <tr>
+                <td>@Show.Conta(transacao.Conta)</td>
+                <td>@transacao.Categoria.Nome</td>
+                <td class="right">@Show.Decimal(transacao.Valor)</td>
+                <td>@transacao.Descricao</td>
+                <td>
+                    @*<a href="@Url.Action("Salvar", "Transacao", new { id = transacao.Id })" class="icon icon-edit">Alterar</a>*@
+                    @Html.PostLink(Url.Action("Apagar", new { id = transacao.Id }), "Apagar", "icon icon-del")
+                </td>
+            </tr>
+        }
+    </table>
+}

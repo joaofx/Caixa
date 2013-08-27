@@ -1,0 +1,10 @@
+﻿-- transacoes
+select transacao.data, transacao.valor, categoria.nome, conta.nome, transacao.descricao
+from transacao
+inner join categoria on (categoria.id = transacao.categoria_id)
+inner join conta on (conta.id = transacao.conta_id)
+
+-- limpar tudo
+delete from transacao;
+delete from movimento;
+update conta set saldo=0;

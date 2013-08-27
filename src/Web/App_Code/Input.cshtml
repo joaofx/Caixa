@@ -1,0 +1,18 @@
+﻿@using Core.Models
+
+@helper Categoria(string id, IEnumerable<Categoria> categorias)
+{
+    <select name="@id" id="@id" style="width: 300px">
+        
+    @foreach(var categoria in categorias)
+    {
+        <option value="0" disabled="disabled">@categoria.Nome</option>  
+
+        foreach (var subCategoria in categoria.SubCategorias)
+        {
+            <option value="@subCategoria.Id">&nbsp;&nbsp;&nbsp;&nbsp;@subCategoria.Nome</option>
+        }
+    }
+
+    </select>
+}

@@ -1,0 +1,23 @@
+﻿@model TrocarSenhaForm
+@{ ViewBag.Title = "Trocar Senha"; }
+
+@using (Html.BeginForm("Trocar", "Senha"))
+{
+    <div class="form">
+        <p>
+            <div>@Html.LabelFor(x => x.SenhaAtual)</div>
+            <div>@Html.PasswordFor(x => x.SenhaAtual)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(x => x.NovaSenha)</div>
+            <div>@Html.PasswordFor(x => x.NovaSenha)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(x => x.ConfirmacaoNovaSenha)</div>
+            <div>@Html.PasswordFor(x => x.ConfirmacaoNovaSenha)</div>
+        </p>
+        <p>
+            <input type="submit" value="Salvar">        
+        </p>
+    </div>
+}

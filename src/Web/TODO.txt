@@ -1,0 +1,32 @@
+﻿RELEASE 1
+
+- abrir movimento [OK]
+- receita [OK]
+- gasto [OK]
+- transferência [OK]
+- fechar movimento
+- fechar movimento com diferença
+- senha
+- refatorar
+
+RELEASE 2
+
+- Cadastrar transferencia passo a passo
+- Amarrar transacao com movimento
+- Icones
+- Colocar auditoria (criador por, criado em) na transacao e movimento
+- Link para ver transacoes de um movimento
+- Colocar dia da semana nas datas
+- Trocar senha
+- Login
+- Sair
+
+TECH:
+- Subir framework Felice pro github
+- Utilizar NuGet apontado pro felice
+- Utilizar chewie
+- Página com tratamento de exceção
+- DataAnnotation gerando textbox com tamanho e maxlength
+	http://stackoverflow.com/questions/7231445/asp-net-mvc-3-data-annoation-and-max-length-size-for-textbox-rendering
+- DataAnnotation para gerar label com asterisco quando campo for obrigatório
+- Utilizar fixie para testes automatizados

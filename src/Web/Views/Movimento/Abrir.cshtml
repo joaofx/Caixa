@@ -1,0 +1,16 @@
+﻿@model AbrirMovimentoForm
+@{ ViewBag.Title = "Novo Movimento"; }
+
+@using (Html.BeginForm("Abrir", "Movimento"))
+{
+    <h4>Movimento anterior: @(Model.MovimentoAnterior != null ? Model.MovimentoAnterior.Data.Show() : "Não há")</h4>
+    <div class="form">
+        <p>
+            <div>@Html.LabelFor(x => x.DataNovoMovimento)</div>
+            <div>@Html.TextBoxFor(x => x.DataNovoMovimento)</div>
+        </p>
+        <p>
+            <input type="submit" value="Abrir Movimento">        
+        </p>
+    </div>
+}

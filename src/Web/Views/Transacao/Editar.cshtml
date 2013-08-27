@@ -1,0 +1,33 @@
+﻿@model EditarTransacaoForm
+@{ ViewBag.Title = "Nova Transação: " + Model.Tipo; }
+
+@using (Html.BeginForm("Editar", "Transacao"))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.Tipo)
+
+    <div class="form">
+        
+        <p>
+            <div>@Html.LabelFor(x => x.CategoriaId)</div>
+            @*<div>@Html.DropDownListFor(x => x.CategoriaId, new SelectList(Model.Categorias, "Id", "Nome", Model.CategoriaId))</div>*@
+            <div>@Input.Categoria("CategoriaId", Model.Categorias)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(x => x.ContaId)</div>
+            <div>@Html.DropDownListFor(x => x.ContaId, new SelectList(Model.Contas, "Id", "Nome", Model.ContaId))</div>
+        </p>
+
+        <p>
+            <div>@Html.LabelFor(x => x.Valor)</div>
+            <div>@Html.TextBoxFor(x => x.Valor)</div>
+        </p>
+        <p>
+            <div>@Html.LabelFor(x => x.Descricao)</div>
+            <div>@Html.TextBoxFor(x => x.Descricao, new { size = 100 })</div>
+        </p>
+        <p>
+            <input type="submit" value="Salvar">        
+        </p>
+    </div>
+}

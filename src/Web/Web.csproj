@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5F4664F-437E-42A3-B372-512FBE19E36C}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Felice.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Felice.0.1.3\lib\Felice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.3.0.733, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\packages\Npgsql.2.0.12.1\lib\net40\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.NUnit">
+      <HintPath>..\..\src\packages\nbehave.spec.nunit.0.6.2\lib\net40\NBehave.Spec.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache, Version=3.3.3.4000, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.Caches.SysCache.3.3.3.4000\lib\net35\NHibernate.Caches.SysCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.2.0.12.1\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="policy.2.0.Npgsql">
+      <HintPath>..\packages\Npgsql.2.0.12.1\lib\net40\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.13.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.13.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boot\DependencyRegistry.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\SenhaController.cs" />
+    <Compile Include="Forms\TransacaoValorForm.cs" />
+    <Compile Include="Forms\TransacaoCategoriaForm.cs" />
+    <Compile Include="Forms\TransacaoContaForm.cs" />
+    <Compile Include="Forms\TrocarSenhaForm.cs" />
+    <Compile Include="Forms\EditarTransferenciaForm.cs" />
+    <Compile Include="Controllers\TransferenciaController.cs" />
+    <Compile Include="Maps\ContaMap.cs" />
+    <Compile Include="Maps\CategoriaMap.cs" />
+    <Compile Include="Controllers\TransacaoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovimentoController.cs" />
+    <Compile Include="Forms\EditarTransacaoForm.cs" />
+    <Compile Include="Forms\FecharMovimentoForm.cs" />
+    <Compile Include="Helpers\ComMovimento.cs" />
+    <Compile Include="Helpers\ControllerExtensions.cs" />
+    <Compile Include="Helpers\ComMovimentoAnterior.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
+    <Compile Include="Maps\TransacaoMap.cs" />
+    <Compile Include="Maps\MovimentoMap.cs" />
+    <Compile Include="ViewModels\TransacaoIndexView.cs" />
+    <Compile Include="ViewModels\HomeIndexView.cs" />
+    <Compile Include="Forms\AbrirMovimentoForm.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\Images\1downarrow.png" />
+    <Content Include="Content\Images\1uparrow.png" />
+    <Content Include="Content\Images\2downarrow.png" />
+    <Content Include="Content\Images\2uparrow.png" />
+    <Content Include="Content\Images\add.png" />
+    <Content Include="Content\Images\alert.png" />
+    <Content Include="Content\Images\arrow_collapsed.png" />
+    <Content Include="Content\Images\arrow_down.png" />
+    <Content Include="Content\Images\arrow_expanded.png" />
+    <Content Include="Content\Images\attachment.png" />
+    <Content Include="Content\Images\bullet_add.png" />
+    <Content Include="Content\Images\bullet_arrow_left.png" />
+    <Content Include="Content\Images\bullet_arrow_right.png" />
+    <Content Include="Content\Images\bullet_black.png" />
+    <Content Include="Content\Images\bullet_blue.png" />
+    <Content Include="Content\Images\bullet_delete.png" />
+    <Content Include="Content\Images\bullet_diamond.png" />
+    <Content Include="Content\Images\bullet_end.png" />
+    <Content Include="Content\Images\bullet_go.png" />
+    <Content Include="Content\Images\bullet_orange.png" />
+    <Content Include="Content\Images\bullet_purple.png" />
+    <Content Include="Content\Images\bullet_toggle_minus.png" />
+    <Content Include="Content\Images\bullet_toggle_plus.png" />
+    <Content Include="Content\Images\calendar.png" />
+    <Content Include="Content\Images\cancel.png" />
+    <Content Include="Content\Images\changeset.png" />
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\close_hl.png" />
+    <Content Include="Content\Images\comment.png" />
+    <Content Include="Content\Images\comments.png" />
+    <Content Include="Content\Images\copy.png" />
+    <Content Include="Content\Images\database_key.png" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\document.png" />
+    <Content Include="Content\Images\draft.png" />
+    <Content Include="Content\Images\duplicate.png" />
+    <Content Include="Content\Images\edit.png" />
+    <Content Include="Content\Images\error.png" />
+    <Content Include="Content\Images\exclamation.png" />
+    <Content Include="Content\Images\external.png" />
+    <Content Include="Content\Images\false.png" />
+    <Content Include="Content\Images\fav.png" />
+    <Content Include="Content\Images\fav_off.png" />
+    <Content Include="Content\Images\feed.png" />
+    <Content Include="Content\Images\files\c.png" />
+    <Content Include="Content\Images\files\csharp.png" />
+    <Content Include="Content\Images\files\css.png" />
+    <Content Include="Content\Images\files\default.png" />
+    <Content Include="Content\Images\files\html.png" />
+    <Content Include="Content\Images\files\image.png" />
+    <Content Include="Content\Images\files\java.png" />
+    <Content Include="Content\Images\files\js.png" />
+    <Content Include="Content\Images\files\pdf.png" />
+    <Content Include="Content\Images\files\php.png" />
+    <Content Include="Content\Images\files\ruby.png" />
+    <Content Include="Content\Images\files\text.png" />
+    <Content Include="Content\Images\files\xml.png" />
+    <Content Include="Content\Images\files\zip.png" />
+    <Content Include="Content\Images\folder.png" />
+    <Content Include="Content\Images\folder_open.png" />
+    <Content Include="Content\Images\folder_open_add.png" />
+    <Content Include="Content\Images\folder_open_orange.png" />
+    <Content Include="Content\Images\group.png" />
+    <Content Include="Content\Images\help.png" />
+    <Content Include="Content\Images\history.png" />
+    <Content Include="Content\Images\hourglass.png" />
+    <Content Include="Content\Images\jstoolbar\bt_bq.png" />
+    <Content Include="Content\Images\jstoolbar\bt_bq_remove.png" />
+    <Content Include="Content\Images\jstoolbar\bt_code.png" />
+    <Content Include="Content\Images\jstoolbar\bt_del.png" />
+    <Content Include="Content\Images\jstoolbar\bt_em.png" />
+    <Content Include="Content\Images\jstoolbar\bt_h1.png" />
+    <Content Include="Content\Images\jstoolbar\bt_h2.png" />
+    <Content Include="Content\Images\jstoolbar\bt_h3.png" />
+    <Content Include="Content\Images\jstoolbar\bt_img.png" />
+    <Content Include="Content\Images\jstoolbar\bt_ins.png" />
+    <Content Include="Content\Images\jstoolbar\bt_link.png" />
+    <Content Include="Content\Images\jstoolbar\bt_ol.png" />
+    <Content Include="Content\Images\jstoolbar\bt_pre.png" />
+    <Content Include="Content\Images\jstoolbar\bt_strong.png" />
+    <Content Include="Content\Images\jstoolbar\bt_ul.png" />
+    <Content Include="Content\Images\lightning.png" />
+    <Content Include="Content\Images\link.png" />
+    <Content Include="Content\Images\link_break.png" />
+    <Content Include="Content\Images\list.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\locked.png" />
+    <Content Include="Content\Images\magnifier.png" />
+    <Content Include="Content\Images\message.png" />
+    <Content Include="Content\Images\milestone_done.png" />
+    <Content Include="Content\Images\milestone_late.png" />
+    <Content Include="Content\Images\milestone_todo.png" />
+    <Content Include="Content\Images\money_add.png" />
+    <Content Include="Content\Images\money_delete.png" />
+    <Content Include="Content\Images\move.png" />
+    <Content Include="Content\Images\new.png" />
+    <Content Include="Content\Images\news.png" />
+    <Content Include="Content\Images\openid-bg.gif" />
+    <Content Include="Content\Images\package.png" />
+    <Content Include="Content\Images\plugin.png" />
+    <Content Include="Content\Images\projects.png" />
+    <Content Include="Content\Images\project_marker.png" />
+    <Content Include="Content\Images\reload.png" />
+    <Content Include="Content\Images\report.png" />
+    <Content Include="Content\Images\save.png" />
+    <Content Include="Content\Images\server_key.png" />
+    <Content Include="Content\Images\show.png" />
+    <Content Include="Content\Images\sort_asc.png" />
+    <Content Include="Content\Images\sort_desc.png" />
+    <Content Include="Content\Images\stats.png" />
+    <Content Include="Content\Images\success.png" />
+    <Content Include="Content\Images\table_multiple.png" />
+    <Content Include="Content\Images\task_done.png" />
+    <Content Include="Content\Images\task_late.png" />
+    <Content Include="Content\Images\task_parent_end.png" />
+    <Content Include="Content\Images\task_todo.png" />
+    <Content Include="Content\Images\textfield.png" />
+    <Content Include="Content\Images\textfield_key.png" />
+    <Content Include="Content\Images\text_list_bullets.png" />
+    <Content Include="Content\Images\ticket.png" />
+    <Content Include="Content\Images\ticket_checked.png" />
+    <Content Include="Content\Images\ticket_edit.png" />
+    <Content Include="Content\Images\ticket_go.png" />
+    <Content Include="Content\Images\ticket_note.png" />
+    <Content Include="Content\Images\time.png" />
+    <Content Include="Content\Images\time_add.png" />
+    <Content Include="Content\Images\toggle_check.png" />
+    <Content Include="Content\Images\true.png" />
+    <Content Include="Content\Images\unlock.png" />
+    <Content Include="Content\Images\user.png" />
+    <Content Include="Content\Images\version_marker.png" />
+    <Content Include="Content\Images\warning.png" />
+    <Content Include="Content\Images\wiki_edit.png" />
+    <Content Include="Content\Images\zip-diff.png" />
+    <Content Include="Content\Images\zip.png" />
+    <Content Include="Content\Images\zoom_in.png" />
+    <Content Include="Content\Images\zoom_out.png" />
+    <Content Include="Content\Layout.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\jquery-2.0.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="TODO.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Shared\Sidebar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{2F1BFDF4-ECB0-4D41-8EBE-3ADF8789CE9C}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infra\Infra.csproj">
+      <Project>{423274F8-E1A5-4E86-9D8C-3F45A3E55D2E}</Project>
+      <Name>Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Link.cshtml" />
+    <Content Include="App_Code\Show.cshtml" />
+    <Content Include="App_Code\Input.cshtml" />
+    <Content Include="Views\Movimento\Abrir.cshtml" />
+    <Content Include="Views\Movimento\Aberto.cshtml" />
+    <Content Include="Views\Shared\Fechado.cshtml" />
+    <Content Include="Views\Movimento\Fechar.cshtml" />
+    <Content Include="Views\Transacao\Index.cshtml" />
+    <Content Include="Views\Transacao\Salvar.cshtml" />
+    <Content Include="Views\Movimento\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Transferencia\Editar.cshtml" />
+    <Content Include="Views\Senha\Trocar.cshtml" />
+    <Content Include="Views\Movimento\Diferenca.cshtml" />
+    <Content Include="Views\Transacao\Nova.cshtml" />
+    <Content Include="Views\Transacao\Conta.cshtml" />
+    <Content Include="Views\Transacao\Categoria.cshtml" />
+    <Content Include="Views\Transacao\Valor.cshtml" />
+    <Content Include="Views\Transacao\Editar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\jquery-2.0.3.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54003</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
