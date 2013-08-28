@@ -169,8 +169,6 @@
     <Compile Include="Forms\TrocarSenhaForm.cs" />
     <Compile Include="Forms\EditarTransferenciaForm.cs" />
     <Compile Include="Controllers\TransferenciaController.cs" />
-    <Compile Include="Maps\ContaMap.cs" />
-    <Compile Include="Maps\CategoriaMap.cs" />
     <Compile Include="Controllers\TransacaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovimentoController.cs" />
@@ -180,8 +178,6 @@
     <Compile Include="Helpers\ControllerExtensions.cs" />
     <Compile Include="Helpers\ComMovimentoAnterior.cs" />
     <Compile Include="Helpers\HtmlExtensions.cs" />
-    <Compile Include="Maps\TransacaoMap.cs" />
-    <Compile Include="Maps\MovimentoMap.cs" />
     <Compile Include="ViewModels\TransacaoIndexView.cs" />
     <Compile Include="ViewModels\HomeIndexView.cs" />
     <Compile Include="Forms\AbrirMovimentoForm.cs" />

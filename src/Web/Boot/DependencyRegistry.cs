@@ -1,7 +1,5 @@
 ﻿namespace Web.Boot
 {
-    using Felice.Core.Data;
-    using Maps;
     using StructureMap.Configuration.DSL;
 
     public class DependencyRegistry : Registry
@@ -13,8 +11,6 @@
                 x.AssemblyContainingType<DependencyRegistry>();
                 x.WithDefaultConventions();
             });
-
-            Database.AddMappings(typeof(MovimentoMap).Assembly);
         }
     }
 }

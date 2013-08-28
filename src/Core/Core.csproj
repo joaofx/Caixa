@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boot\DependencyRegistry.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Conta.cs" />
     <Compile Include="Models\Movimento.cs" />
