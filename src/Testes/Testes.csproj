@@ -127,6 +127,7 @@
     <Compile Include="CategoriaServicoTest.cs" />
     <Compile Include="Aceitacao\AceitacaoTest.cs" />
     <Compile Include="DatabaseCleaner.cs" />
+    <Compile Include="Integracao\ContaMapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unitarios\AbreMovimentoServiceTests.cs" />
     <Compile Include="Unitarios\FechamentoTests.cs" />
