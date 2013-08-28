@@ -3,9 +3,10 @@ namespace Infra.Repositories
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Core.Models;
+    using Core.Repositories;
     using Felice.Core.Data;
 
-    public class ContaRepository : RepositoryBase<Conta>
+    public class ContaRepository : RepositoryBase<Conta>, IContaRepository
     {
         public ReadOnlyCollection<Conta> Todos()
         {
