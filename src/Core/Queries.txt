@@ -8,3 +8,5 @@ inner join conta on (conta.id = transacao.conta_id)
 delete from transacao;
 delete from movimento;
 update conta set saldo=0;
+
+--
