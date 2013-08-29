@@ -10,11 +10,11 @@ namespace Web.Controllers
 
     public class HomeController : Controller
     {
-        private readonly MovimentoServico movimentoServico;
+        private readonly MovimentoRepository movimentoRepository;
 
-        public HomeController(MovimentoServico movimentoServico)
+        public HomeController(MovimentoRepository movimentoRepository)
         {
-            this.movimentoServico = movimentoServico;
+            this.movimentoRepository = movimentoRepository;
         }
 
         [ComMovimento]

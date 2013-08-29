@@ -10,14 +10,12 @@
 
     public class MovimentoController : Controller
     {
-        private readonly MovimentoServico movimentoServico;
         private readonly IMovimentoRepository movimentoRepository;
         private readonly AbreMovimentoService abreMovimentoService;
         private readonly FechaMovimentoService fechaMovimentoService;
 
-        public MovimentoController(MovimentoServico movimentoServico, IMovimentoRepository movimentoRepository, AbreMovimentoService abreMovimentoService, FechaMovimentoService fechaMovimentoService)
+        public MovimentoController(IMovimentoRepository movimentoRepository, AbreMovimentoService abreMovimentoService, FechaMovimentoService fechaMovimentoService)
         {
-            this.movimentoServico = movimentoServico;
             this.movimentoRepository = movimentoRepository;
             this.abreMovimentoService = abreMovimentoService;
             this.fechaMovimentoService = fechaMovimentoService;
@@ -26,7 +24,7 @@
         [ComMovimento]
         public ActionResult Index()
         {
-            return View(this.movimentoServico.Todos());
+            return View(this.movimentoRepository.Todos());
         }
 
         [ComMovimentoAnterior]

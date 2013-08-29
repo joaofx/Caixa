@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Felice.Core, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Core, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.0.1.5\lib\Felice.Core.dll</HintPath>
+      <HintPath>..\packages\Felice.0.1.7\lib\Felice.Core.dll</HintPath>
     </Reference>
     <Reference Include="Felice.Data">
       <HintPath>..\packages\Felice.Data.0.1.5\lib\Felice.Data.dll</HintPath>
@@ -70,7 +70,6 @@
     <Compile Include="Repositories\ICategoriaRepository.cs" />
     <Compile Include="Repositories\IMovimentoRepository.cs" />
     <Compile Include="Repositories\ITransacaoRepository.cs" />
-    <Compile Include="Services\MovimentoServico.cs" />
     <Compile Include="Services\AbreMovimentoService.cs" />
     <Compile Include="Models\Fechamento.cs" />
     <Compile Include="Services\FechaMovimentoService.cs" />

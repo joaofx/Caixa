@@ -1,5 +1,6 @@
 namespace Core.Repositories
 {
+    using System.Collections.ObjectModel;
     using Felice.Core.Model;
     using Models;
 
@@ -8,5 +9,6 @@ namespace Core.Repositories
         Movimento GetAnterior();
 
         Movimento GetAtual();
+        ReadOnlyCollection<Movimento> Todos();
     }
 }

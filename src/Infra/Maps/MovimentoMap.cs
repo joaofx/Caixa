@@ -15,6 +15,8 @@ namespace Infra.Maps
             this.Map(x => x.Status).Column("status");
             this.Map(x => x.DiferencaNoCaixa).Column("diferenca_caixa");
             this.Map(x => x.DiferencaNaConta).Column("diferenca_conta");
+
+            this.References(x => x.MovimentoAnterior).Column("movimento_anterior_id");
         }
     }
 }

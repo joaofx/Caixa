@@ -9,8 +9,8 @@
         {
             Create.Table("categoria")
                 .WithColumn("id").AsInt64().NotNullable().PrimaryKey().Identity()
-                .WithColumn("nome").AsString(64)
-                .WithColumn("categoria_id").AsInt64();
+                .WithColumn("nome").AsString(64).Nullable()
+                .WithColumn("categoria_id").AsInt64().Nullable();
         }
     }
 }

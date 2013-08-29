@@ -33,12 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Felice.Core, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Core, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.0.1.5\lib\Felice.Core.dll</HintPath>
+      <HintPath>..\packages\Felice.0.1.7\lib\Felice.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Felice.Data">
-      <HintPath>..\packages\Felice.Data.0.1.5\lib\Felice.Data.dll</HintPath>
+    <Reference Include="Felice.Data, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Felice.Data.0.1.7\lib\Felice.Data.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator">
       <HintPath>..\packages\FluentMigrator.1.1.1.0\lib\40\FluentMigrator.dll</HintPath>
@@ -81,8 +82,9 @@
     <Compile Include="Maps\TransacaoMap.cs" />
     <Compile Include="Migrations\201308281619_CriaConta.cs" />
     <Compile Include="Migrations\201308281740_CriaCategoria.cs" />
-    <Compile Include="Migrations\MigrationOptions.cs" />
-    <Compile Include="Migrations\Runner.cs" />
+    <Compile Include="Migrations\201308291701_CriaMovimento.cs" />
+    <Compile Include="Migrations\201308291704_CriaTransacao.cs" />
+    <Compile Include="Migrations\201308291806_AdicionaMovAnteriorEmMov.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoriaRepository.cs" />
     <Compile Include="Repositories\ContaRepository.cs" />

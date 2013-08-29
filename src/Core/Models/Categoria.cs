@@ -5,7 +5,7 @@ namespace Core.Models
 
     public class Categoria : Entity
     {
-        protected Categoria()
+        public Categoria()
         {
         }
 

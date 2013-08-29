@@ -18,7 +18,7 @@
 
             Database.Initialize();
             ////Database.UpdateSchema();
-            Runner.MigrateToLatest();
+            Database.MigrateToLastVersion();
             
             AreaRegistration.RegisterAllAreas();
 

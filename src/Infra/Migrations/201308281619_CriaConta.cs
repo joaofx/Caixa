@@ -9,8 +9,8 @@
         {
             Create.Table("conta")
                 .WithColumn("id").AsInt64().NotNullable().PrimaryKey().Identity()
-                .WithColumn("nome").AsString(64)
-                .WithColumn("saldo").AsDecimal();
+                .WithColumn("nome").AsString(64).Nullable()
+                .WithColumn("saldo").AsDecimal().Nullable();
         }
     }
 }

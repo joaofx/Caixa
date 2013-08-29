@@ -1,7 +1,9 @@
 namespace Infra.Repositories
 {
+    using System.Collections.ObjectModel;
     using Core.Models;
     using Core.Repositories;
+    using Felice.Core;
     using Felice.Data;
 
     public class MovimentoRepository : RepositoryBase<Movimento>, IMovimentoRepository
@@ -22,6 +24,15 @@ namespace Infra.Repositories
                 .Where(x => x.Status == MovimentoStatus.Aberto)
                 .OrderBy(x => x.Data).Desc
                 .SingleOrDefault();
+        }
+
+        public ReadOnlyCollection<Movimento> Todos()
+        {
+            return UnitOfWork.CurrentSession.QueryOver<Movimento>()
+                .OrderBy(x => x.Data)
+                .Desc
+                .List()
+                .AsReadOnly();
         }
     }
 }
