@@ -2,7 +2,7 @@
 
 namespace Web.Controllers
 {
-    using Felice.Core.Mvc;
+    using Felice.Mvc;
     using Forms;
 
     public class SenhaController : Controller

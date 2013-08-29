@@ -2,8 +2,8 @@
 
 namespace Web.Controllers
 {
-    using Felice.Core.Data;
-    using Felice.Core.Mvc;
+    using Felice.Data;
+    using Felice.Mvc;
     using Infra.Repositories;
 
     public class AdminController : Controller
@@ -32,7 +32,7 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Schema()
         {
-            Database.UpdateSchema();
+            Database.MigrateToLastVersion();
             this.Success("Schema atualizado");
             return RedirectToAction("Index");
         }

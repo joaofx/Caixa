@@ -2,7 +2,7 @@ namespace Core.Services
 {
     using System.Collections.ObjectModel;
     using Felice.Core;
-    using Felice.Core.Data;
+    using Felice.Data;
     using Models;
 
     public class MovimentoServico

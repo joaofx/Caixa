@@ -1,6 +1,6 @@
 ﻿namespace Infra.Boot
 {
-    using Felice.Core.Data;
+    using Felice.Data;
     using Maps;
     using StructureMap.Configuration.DSL;
 

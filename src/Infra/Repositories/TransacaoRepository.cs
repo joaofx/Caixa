@@ -4,7 +4,7 @@ namespace Infra.Repositories
     using Core.Models;
     using Core.Repositories;
     using Felice.Core;
-    using Felice.Core.Data;
+    using Felice.Data;
 
     public class TransacaoRepository : RepositoryBase<Transacao>, ITransacaoRepository
     {

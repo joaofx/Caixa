@@ -3,8 +3,8 @@
 namespace Web.Controllers
 {
     using Core.Services;
-    using Felice.Core.Data;
-    using Felice.Core.Mvc;
+    using Felice.Data;
+    using Felice.Mvc;
     using Helpers;
     using Infra.Repositories;
 
@@ -30,7 +30,7 @@ namespace Web.Controllers
 
         public ActionResult Schema()
         {
-            Database.UpdateSchema();
+            Database.MigrateToLastVersion();
 
             UnitOfWork.CurrentSession.CreateSQLQuery("delete from conta").ExecuteUpdate();
             UnitOfWork.CurrentSession.CreateSQLQuery("delete from categoria").ExecuteUpdate();

@@ -4,7 +4,7 @@
     using Core.Models;
     using Core.Services;
     using Felice.Core;
-    using Felice.Core.Mvc;
+    using Felice.Mvc;
     using Helpers;
     using Infra.Repositories;
     using ViewModels;

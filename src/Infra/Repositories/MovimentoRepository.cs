@@ -2,7 +2,7 @@ namespace Infra.Repositories
 {
     using Core.Models;
     using Core.Repositories;
-    using Felice.Core.Data;
+    using Felice.Data;
 
     public class MovimentoRepository : RepositoryBase<Movimento>, IMovimentoRepository
     {

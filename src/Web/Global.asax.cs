@@ -2,12 +2,12 @@
 {
     using App_Start;
     using Felice.Core;
-    using Felice.Core.Data;
     using Felice.Core.IoC;
-    using Felice.Core.Mvc;
     using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using Felice.Data;
+    using Felice.Mvc;
     using Infra.Migrations;
 
     public class MvcApplication : System.Web.HttpApplication

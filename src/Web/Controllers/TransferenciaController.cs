@@ -3,7 +3,7 @@
     using System.Web.Mvc;
     using Core.Services;
     using Felice.Core;
-    using Felice.Core.Mvc;
+    using Felice.Mvc;
     using Helpers;
     using Infra.Repositories;
     using Web.Forms;

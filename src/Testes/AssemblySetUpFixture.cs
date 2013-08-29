@@ -1,7 +1,7 @@
 ﻿namespace Testes
 {
     using Felice.Core;
-    using Felice.Core.Data;
+    using Felice.Data;
     using NUnit.Framework;
 
     [SetUpFixture]
@@ -13,7 +13,7 @@
             FeliceCore.Initialize();
 
             Database.Initialize();
-            Database.UpdateSchema();
+            Database.MigrateToLastVersion();
         }
     }
 }

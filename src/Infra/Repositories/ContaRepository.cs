@@ -4,7 +4,7 @@ namespace Infra.Repositories
     using System.Collections.ObjectModel;
     using Core.Models;
     using Core.Repositories;
-    using Felice.Core.Data;
+    using Felice.Data;
 
     public class ContaRepository : RepositoryBase<Conta>, IContaRepository
     {

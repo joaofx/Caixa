@@ -5,7 +5,7 @@ namespace Infra.Repositories
     using System.Linq;
     using Core.Models;
     using Core.Repositories;
-    using Felice.Core.Data;
+    using Felice.Data;
 
     public class CategoriaRepository : RepositoryBase<Categoria>, ICategoriaRepository
     {

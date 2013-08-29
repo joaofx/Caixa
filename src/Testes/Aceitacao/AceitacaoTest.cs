@@ -4,8 +4,8 @@
     using Core.Models;
     using Core.Services;
     using Felice.Core;
-    using Felice.Core.Data;
     using Felice.Core.Model;
+    using Felice.Data;
     using Infra.Repositories;
     using NBehave.Spec.NUnit;
     using NUnit.Framework;

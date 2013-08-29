@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using Core.Models;
-    using Felice.Core.Mvc;
+    using Felice.Mvc;
 
     public class AbrirMovimentoForm
     {

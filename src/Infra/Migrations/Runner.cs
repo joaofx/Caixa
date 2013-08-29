@@ -2,11 +2,9 @@
 {
     using System.Reflection;
     using Felice.Core;
-    using Felice.Core.Data;
     using FluentMigrator.Runner;
     using FluentMigrator.Runner.Announcers;
     using FluentMigrator.Runner.Initialization;
-    using Maps;
 
     public static class Runner
     {

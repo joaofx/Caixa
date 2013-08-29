@@ -1,7 +1,7 @@
 ﻿namespace Testes
 {
     using Core.Models;
-    using Felice.Core.Data;
+    using Felice.Data;
     using Felice.TestFramework;
 
     public class DatabaseCleaner : DaoBase, IDatabaseCleaner
