@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Felice.Core, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Core, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.0.1.7\lib\Felice.Core.dll</HintPath>
+      <HintPath>..\packages\Felice.0.1.9\lib\Felice.Core.dll</HintPath>
     </Reference>
     <Reference Include="Felice.Data">
       <HintPath>..\packages\Felice.Data.0.1.5\lib\Felice.Data.dll</HintPath>

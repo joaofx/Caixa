@@ -71,11 +71,20 @@ namespace Core.Models
             protected set;
         }
 
-        public virtual void Fechar(Fechamento fechamento, MovimentoStatus fechado)
+        public virtual void Fechar(Fechamento fechamento)
         {
             this.SaldoFinalCaixa = fechamento.SomaDoCaixa;
             this.SaldoFinalConta = fechamento.SomaDaConta;
-            this.Status = fechado;
+            this.Status = MovimentoStatus.Fechado;
+        }
+
+        public virtual void FecharComDiferenca(Fechamento fechamento)
+        {
+            this.SaldoFinalCaixa = fechamento.SomaDoCaixa + fechamento.DiferencaNoCaixa;
+            this.SaldoFinalConta = fechamento.SomaDaConta + fechamento.DiferencaNaConta;
+            this.DiferencaNoCaixa = fechamento.DiferencaNoCaixa;
+            this.DiferencaNaConta = fechamento.DiferencaNaConta;
+            this.Status = MovimentoStatus.FechadoComDiferenca;
         }
     }
 }

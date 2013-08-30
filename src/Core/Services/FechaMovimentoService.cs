@@ -41,7 +41,7 @@ namespace Core.Services
 
             if (fechamento.Batido)
             {
-                movimento.Fechar(fechamento, MovimentoStatus.Fechado);
+                movimento.Fechar(fechamento);
                 this.movimentoRepository.Save(movimento);
 
                 caixa.Saldo = somaDoCaixa;
@@ -54,7 +54,7 @@ namespace Core.Services
             return fechamento;
         }
 
-        public Fechamento FecharComDiferenca(
+        public void FecharComDiferenca(
             decimal saldoInformadoNoCaixa,
             decimal saldoInformadoNaConta)
         {
@@ -65,7 +65,7 @@ namespace Core.Services
 
             if (fechamento.Batido)
             {
-                return fechamento;
+                return;
             }
 
             var caixa = this.contaRepository.ById(Conta.CaixaId);
@@ -87,7 +87,7 @@ namespace Core.Services
                 Valor = fechamento.DiferencaNaConta
             });
 
-            movimento.Fechar(fechamento, MovimentoStatus.FechadoComDiferenca);
+            movimento.FecharComDiferenca(fechamento);
             this.movimentoRepository.Save(movimento);
 
             caixa.Saldo = saldoInformadoNoCaixa;
@@ -95,8 +95,6 @@ namespace Core.Services
 
             this.contaRepository.Save(conta);
             this.contaRepository.Save(caixa);
-
-            return fechamento;
         }
     }
 }

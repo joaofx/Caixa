@@ -10,6 +10,8 @@
         {
             this.Session.DeleteAll<Transacao>();
             this.Session.DeleteAll<Movimento>();
+            this.Session.DeleteAll<Categoria>();
+            this.Session.DeleteAll<Conta>();
         }
     }
 }

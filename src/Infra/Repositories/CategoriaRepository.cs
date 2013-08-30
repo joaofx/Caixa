@@ -25,7 +25,7 @@ namespace Infra.Repositories
                 }),
                 new Categoria(i++, "Loja", new List<Categoria>()
                 {
-                    new Categoria(i++, "Agua"),
+                    new Categoria(i++, "Água"),
                     new Categoria(i++, "Aluguel"),
                     new Categoria(i++, "Condominio"),
                     new Categoria(i++, "Energia"),

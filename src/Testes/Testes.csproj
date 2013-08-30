@@ -33,21 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Felice.Core, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Core, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.0.1.7\lib\Felice.Core.dll</HintPath>
+      <HintPath>..\packages\Felice.0.1.9\lib\Felice.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Felice.Data, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Data, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.Data.0.1.7\lib\Felice.Data.dll</HintPath>
+      <HintPath>..\packages\Felice.Data.0.1.9\lib\Felice.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Felice.Mvc, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Mvc, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.Mvc.0.1.7\lib\Felice.Mvc.dll</HintPath>
+      <HintPath>..\packages\Felice.Mvc.0.1.9\lib\Felice.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Felice.TestFramework, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.TestFramework, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.TestFramework.0.1.7\lib\Felice.TestFramework.dll</HintPath>
+      <HintPath>..\packages\Felice.TestFramework.0.1.9\lib\Felice.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator, Version=1.1.1.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentMigrator.1.1.1.0\lib\40\FluentMigrator.dll</HintPath>
@@ -141,19 +141,19 @@
   <ItemGroup>
     <Compile Include="AcceptanceHelper.cs" />
     <Compile Include="Boot\DependencyRegistry.cs" />
-    <Compile Include="CategoriaServicoTest.cs" />
+    <Compile Include="Integracao\Repositories\CategoriaRepositoryTest.cs" />
     <Compile Include="Aceitacao\AceitacaoTest.cs" />
     <Compile Include="DatabaseCleaner.cs" />
-    <Compile Include="Integracao\ContaMapTest.cs" />
-    <Compile Include="Integracao\CategoriaMapTest.cs" />
-    <Compile Include="Integracao\MovimentoMapTest.cs" />
+    <Compile Include="Integracao\Maps\ContaMapTest.cs" />
+    <Compile Include="Integracao\Maps\CategoriaMapTest.cs" />
+    <Compile Include="Integracao\Maps\MovimentoMapTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unitarios\AbreMovimentoServiceTests.cs" />
-    <Compile Include="Unitarios\FechamentoTests.cs" />
-    <Compile Include="Unitarios\FechaMovimentoServiceTests.cs" />
-    <Compile Include="Unitarios\TransferenciaServiceTests.cs" />
-    <Compile Include="Unitarios\GastoServiceTests.cs" />
-    <Compile Include="Unitarios\RecebimentoServiceTests.cs" />
+    <Compile Include="Unitarios\Services\AbreMovimentoServiceTests.cs" />
+    <Compile Include="Unitarios\Services\FechamentoTests.cs" />
+    <Compile Include="Unitarios\Services\FechaMovimentoServiceTests.cs" />
+    <Compile Include="Unitarios\Services\TransferenciaServiceTests.cs" />
+    <Compile Include="Unitarios\Services\GastoServiceTests.cs" />
+    <Compile Include="Unitarios\Services\RecebimentoServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
