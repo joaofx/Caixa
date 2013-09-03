@@ -1,63 +1,40 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title>Macarrão</title>
-        <link href="@Url.Content("~/Content/Layout.css")" media="all" rel="stylesheet" type="text/css" />
-    </head>
+﻿@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
 
-    <body>
-
-        <div id="top">
-            <div style="float: left; margin-bottom: 5px">
-                <h1>Macarrão Na Rua</h1>
-            </div>
-            <div style="float: right; margin-bottom: 5px">
-                Logado como Carla 
-                <span style="margin-left: 10px">
-                    <a href="@Url.Action("Trocar", "Senha")">Trocar senha</a>
-                </span>
-                <span style="margin-left: 20px">
-                    <a href="@Url.Action("Sair", "Login")" class="button">Sair</a>
-                </span>
-            </div>
-        </div>
-        
-        @RenderPage("Menu.cshtml")
+@RenderPage("Menu.cshtml")
        
-        <div id="title">
+<div class="container">
+    
+    <div id="title">
             
-            @if (IsSectionDefined("contextual"))
-            {
-                <div class="contextual">
-                    @RenderSection("contextual", required: false)
-                </div>
-            }
+        @if (IsSectionDefined("contextual"))
+        {
+            <div class="contextual">
+                @RenderSection("contextual", required: false)
+            </div>
+        }
 
-            @if (ViewBag.Title != null)
-            {
-                <h2 id="title">@ViewBag.Title</h2>    
-            }
+        @if (ViewBag.Title != null)
+        {
+            <h2 id="title">@ViewBag.Title</h2>    
+        }
             
-        </div>
+    </div>
 
-		<div id="content">
+	<div id="content">
         
            
-            @Html.GetSuccess()
-            @Html.GetError()
-            @Html.GetAlert()
-            @Html.ShowValidationSummary()
+        @Html.GetSuccess("alert alert-dismissable alert-success")
+        @Html.GetError("alert alert-dismissable alert-success")
+        @Html.GetAlert("alert alert-dismissable alert-success")
+        @Html.ShowValidationSummary("alert alert-dismissable alert-success")
 
-            @RenderBody()
+        @RenderBody()
 
-			<div style="clear:both;"></div>
+		<div style="clear:both;"></div>
 
-		</div>
+	</div>
 
-        <div id="bottom"></div>
-    
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-2.0.2.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/application.js")"></script>
-
-</body>
-</html>
+    <div id="bottom"></div>
+</div>

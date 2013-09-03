@@ -1,0 +1,37 @@
+﻿@model LoginForm
+
+@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container">
+<div class="row col-lg-6">
+<div class="well">
+    
+    @using (Html.BeginForm<LoginController>(x => x.Index(null), FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>Autenticação</legend>
+            
+                @Html.GetError("alert alert-dismissable alert-danger")
+                @Html.ShowValidationSummary("alert alert-dismissable alert-danger")
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Senha, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.PasswordFor(x => x.Senha, new { @class = "form-control", placeholder = "Senha" })
+                </div>
+            </div>
+                        
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <input type="submit" class="btn btn-primary" value="Entrar" />
+                </div>
+            </div>
+
+        </fieldset>
+    }
+
+</div>
+</div>
+</div>    

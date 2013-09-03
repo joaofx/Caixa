@@ -1,5 +1,6 @@
-﻿namespace Testes.Boot
+﻿namespace IntegrationTests.Boot
 {
+    using Felice.TestFramework;
     using StructureMap.Configuration.DSL;
 
     public class DependencyRegistry : Registry
@@ -11,6 +12,8 @@
                 x.AssemblyContainingType<DependencyRegistry>();
                 x.WithDefaultConventions();
             });
+
+            For<IDatabaseCleaner>().Use<DatabaseCleaner>();
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace Testes
+namespace IntegrationTests
 {
     using Felice.Core;
 

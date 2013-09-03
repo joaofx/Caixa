@@ -7,7 +7,7 @@ namespace Core.Models
         public const long CaixaId = 1;
         public const long ContaCorrenteId = 2;
 
-        protected Conta()
+        public Conta()
         {
         }
 

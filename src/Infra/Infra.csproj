@@ -33,13 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Felice.Core, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Core, Version=0.1.11.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.0.1.9\lib\Felice.Core.dll</HintPath>
+      <HintPath>..\packages\Felice.0.1.11\lib\Felice.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Felice.Data, Version=0.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Felice.Data, Version=0.1.11.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Felice.Data.0.1.9\lib\Felice.Data.dll</HintPath>
+      <HintPath>..\packages\Felice.Data.0.1.11\lib\Felice.Data.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator">
       <HintPath>..\packages\FluentMigrator.1.1.1.0\lib\40\FluentMigrator.dll</HintPath>

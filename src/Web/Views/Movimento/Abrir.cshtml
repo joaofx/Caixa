@@ -1,16 +1,32 @@
 ﻿@model AbrirMovimentoForm
-@{ ViewBag.Title = "Novo Movimento"; }
 
-@using (Html.BeginForm("Abrir", "Movimento"))
+<div class="row col-lg-6">
+<h4>Movimento anterior: @(Model.MovimentoAnterior != null ? Model.MovimentoAnterior.Data.Show() : "Não há")</h4>
+</div>
+
+<div class="row col-lg-6">
+<div class="well">
+
+@using (Html.BeginForm("Abrir", "Movimento", FormMethod.Post, new { @class = "form-horizontal" }))
 {
-    <h4>Movimento anterior: @(Model.MovimentoAnterior != null ? Model.MovimentoAnterior.Data.Show() : "Não há")</h4>
-    <div class="form">
-        <p>
-            <div>@Html.LabelFor(x => x.DataNovoMovimento)</div>
-            <div>@Html.TextBoxFor(x => x.DataNovoMovimento)</div>
-        </p>
-        <p>
-            <input type="submit" value="Abrir Movimento">        
-        </p>
-    </div>
+    <fieldset>
+        <legend>Novo Movimento</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.DataNovoMovimento, new { @class = "col-lg-2 control-label" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.DataNovoMovimento, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <input type="submit" class="btn btn-primary" value="Abrir movimento" />
+            </div>
+        </div>
+
+    </fieldset>
 }
+
+</div>
+</div>

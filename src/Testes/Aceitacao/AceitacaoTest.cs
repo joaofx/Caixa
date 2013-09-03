@@ -1,4 +1,4 @@
-﻿namespace Testes.Aceitacao
+﻿namespace IntegrationTests.Aceitacao
 {
     using System;
     using Core.Models;
@@ -6,14 +6,14 @@
     using Felice.Core;
     using Felice.Core.Model;
     using Felice.Data;
+    using Felice.TestFramework;
     using Infra.Repositories;
     using NBehave.Spec.NUnit;
     using NUnit.Framework;
 
     [TestFixture]
-    public class AcceptanceTest
+    public class AcceptanceTest : AutomatedTest
     {
-        private IUnitOfWork unitOfWork = Dependency.Resolve<IUnitOfWork>();
         private ContaRepository contaRepository = Dependency.Resolve<ContaRepository>();
         private CategoriaRepository categoriaRepository = Dependency.Resolve<CategoriaRepository>();
         private Conta caixa;
@@ -29,6 +29,7 @@
         private Categoria combustivel;
         private Categoria energia;
         private AbreMovimentoService abreMovimentoService;
+        private IUnitOfWork unitOfWork;
 
         [SetUp]
         public void Setup()
