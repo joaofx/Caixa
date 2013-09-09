@@ -12,31 +12,34 @@ namespace Web.App_Start
 	{
 		public static void RegisterBundles()
 		{
-            var nullBuilder = new NullBuilder();
-            var cssTransformer = new CssTransformer();
-            var jsTransformer = new JsTransformer();
-            var nullOrderer = new NullOrderer();
+		    var bundles = BundleTable.Bundles;
 
-			// Add @Styles.Render("~/Content/bootstrap/base") in the <head/> of your _Layout.cshtml view
-			// For Bootstrap theme add @Styles.Render("~/Content/bootstrap/theme") in the <head/> of your _Layout.cshtml view
-			// Add @Scripts.Render("~/bundles/bootstrap") after jQuery in your _Layout.cshtml view
-			// When <compilation debug="true" />, MVC4 will render the full readable version. When set to <compilation debug="false" />, the minified version will be rendered automatically
-			BundleTable.Bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/Application.js").Include(
+                   "~/Scripts/jquery-1.*",
+                   "~/Scripts/modernizr-*",
+                   "~/Scripts/bootstrap-*",
+                   "~/Scripts/jquery.unobtrusive*",
+                   "~/Scripts/jquery.priceformat*"));
 
-            var commonStylesBundle = new Bundle("~/Content/bootstrap/base");
+            bundles.Add(new StyleBundle("~/Content/Style.css").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/fam-icons.css",
+                "~/Content/datepicker.css",
+                "~/Content/custom.css"));
 
-			commonStylesBundle
-                .Include("~/Content/bootstrap/bootswatch.min.css")
-                .Include("~/Content/bootstrap/bootstrap.min.css")
-                .Include("~/Content/bootstrap/custom.less");
-
-            commonStylesBundle.Builder = nullBuilder;
-            commonStylesBundle.Transforms.Add(cssTransformer);
-            commonStylesBundle.Orderer = nullOrderer;
-
-            BundleTable.Bundles.Add(commonStylesBundle);
-
-		    BundleTable.Bundles.Add(new StyleBundle("~/Content/login").Include("~/Content/login.css"));
+            bundles.Add(new StyleBundle("~/Content/Theme.css").Include(
+                "~/Content/themes/base/jquery.ui.core.css",
+                "~/Content/themes/base/jquery.ui.resizable.css",
+                "~/Content/themes/base/jquery.ui.selectable.css",
+                "~/Content/themes/base/jquery.ui.accordion.css",
+                "~/Content/themes/base/jquery.ui.autocomplete.css",
+                "~/Content/themes/base/jquery.ui.button.css",
+                "~/Content/themes/base/jquery.ui.dialog.css",
+                "~/Content/themes/base/jquery.ui.slider.css",
+                "~/Content/themes/base/jquery.ui.tabs.css",
+                "~/Content/themes/base/jquery.ui.datepicker.css",
+                "~/Content/themes/base/jquery.ui.progressbar.css",
+                "~/Content/themes/base/jquery.ui.theme.css"));
 		}
 	}
 }

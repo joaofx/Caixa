@@ -1,0 +1,82 @@
+﻿@{
+    var isSideBarDefined = IsSectionDefined("sidebar");
+    var contentClass = isSideBarDefined ? "span10" : "span12";
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Macarrão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    @Styles.Render("~/Content/Style.css")
+    @Styles.Render("~/Content/Theme.css")
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+  
+    @Html.Partial("_Menu")
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            
+            @if (isSideBarDefined)
+            {
+                <div class="span2">
+                    <div class="well">
+                        @RenderSection("sidebar", required: false)
+                    </div>
+                </div>
+            }
+
+            <div class="@contentClass">
+                                   
+                <h4>@ViewBag.Title</h4>
+
+                @Html.GetSuccess("alert alert-success")
+                @Html.GetError("alert alert-error")
+                @Html.GetAlert("alert alert-block")
+                @Html.ShowValidationSummary("alert alert-error")
+
+                @RenderBody()
+            </div>
+
+        </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2012</p>
+      </footer>
+
+    </div>
+    
+    @Scripts.Render("~/Scripts/Application.js")
+    @Scripts.Render("~/Scripts/jquery.priceformat.1.7.min.js")
+
+    @RenderSection("scripts", required: false)
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+
+        $('.decimal').priceFormat({
+            prefix: '',
+            centsSeparator: ',',
+            thousandsSeparator: '.'
+        });
+    });  
+</script>  
+
+  </body>
+</html>

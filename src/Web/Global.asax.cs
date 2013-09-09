@@ -8,7 +8,6 @@
     using System.Web.Routing;
     using Felice.Data;
     using Felice.Mvc;
-    using Infra.Migrations;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -17,7 +16,6 @@
             FeliceCore.Initialize();
 
             Database.Initialize();
-            ////Database.UpdateSchema();
             Database.MigrateToLastVersion();
             
             AreaRegistration.RegisterAllAreas();

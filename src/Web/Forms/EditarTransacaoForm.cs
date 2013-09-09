@@ -8,7 +8,7 @@
     using Infra.Repositories;
 
     public class EditarTransacaoForm
-    {
+    { 
         public ReadOnlyCollection<Conta> Contas
         {
             get;

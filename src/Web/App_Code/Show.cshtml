@@ -22,13 +22,29 @@
 
 @helper Conta(Conta conta)
 {
-    <span class="conta-@conta.Id">@conta.Nome</span>
+    string cssClass = string.Empty;
+    
+    if (conta.Id == Core.Models.Conta.CaixaId)
+    {
+        cssClass = "label label-success";
+    }
+    else if (conta.Id == Core.Models.Conta.ContaCorrenteId)
+    {
+        cssClass = "label label-warning";
+    }
+
+    <span class="@cssClass">@conta.Nome</span>
 }
 
 @helper StatusMovimento(Movimento movimento)
 {
     var labelClass = GetLabelText(movimento.Status);
     <span class="@labelClass">@movimento.Status.ToString().PascalToSentence()</span>
+}
+
+@helper MovimentoAnterior(Movimento movimento)
+{
+    <h4>Movimento anterior: @(movimento != null ? movimento.Data.Show() : "Não há")</h4>
 }
 
 @helper Decimal(decimal value)

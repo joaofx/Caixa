@@ -40,7 +40,8 @@
                 .OnSuccess(x => this.RedirectToAction<HomeController>(c => c.Index()));
         }
 
-        public ActionResult Quit()
+        [AllowAnonymous]
+        public ActionResult Sair()
         {
             FormsAuthentication.SignOut();
             return this.RedirectToAction(x => x.Index());

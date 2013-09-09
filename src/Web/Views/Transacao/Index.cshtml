@@ -4,42 +4,26 @@
     ViewBag.Title = "Transações do dia " + Model.MovimentoAtual.Data.Show();
 }
 
-@section contextual
+@section sidebar
 {
-    @Link.FecharMovimento(Url)
+    @Html.Partial("_Sidebar")
 }
 
 <div>
-    <div class="contextual">
-        <a href="@Url.Action("Nova", "Transacao", new { Tipo = TipoTransacao.Gasto })" class="icon icon-despesa">Novo Gasto</a>
-        <a href="@Url.Action("Nova", "Transacao", new { Tipo = TipoTransacao.Recebimento })" class="icon icon-receita">Novo Recebimento</a>
-        <a href="@Url.Action("Nova", "Transferencia")" class="icon icon-transf">Nova Transferência</a>
-    </div>
-
-    @using (Html.BeginForm("Index", "Transacao", FormMethod.Get))
-    {
-        <text>@Html.LabelFor(x => x.Conta):</text>
-            
-        @Html.DropDownListFor(x => x.Conta,
-            new SelectList(Model.Contas, "Id", "Nome", Model.Conta), "(Todas)", new { style = "width: 200px" })
-
-        <input type="submit" value="Filtrar" />
-    }
+    <ul class="nav nav-pills">
+      <li><a href="@Url.Action("Index")">Todas as contas</a></li>
+      <li><a href="@Url.Action("Index", new { conta = Conta.CaixaId })">Caixa</a></li>
+      <li><a href="@Url.Action("Index", new { conta = Conta.ContaCorrenteId })">Itaú</a></li>
+    </ul>
 </div>
 
 @if (Model.Transacoes.Count == 0)
 {
-    <div class="flash nodata">Não há transações cadastradas</div>
+    <div class="alert alert-info">Não há transações cadastradas</div>
 }
 else
 {
-    <table class="list fixed">
-        <colgroup>
-            <col width="200px">
-            <col width="250px">
-            <col width="150px">
-            <col width="300px">
-        </colgroup>
+    <table class="table table-condensed table-hover table-bordered table-striped">
         <tr>
             <th>Conta</th>
             <th>Categoria</th>
@@ -55,7 +39,6 @@ else
                 <td class="right">@Show.Decimal(transacao.Valor)</td>
                 <td>@transacao.Descricao</td>
                 <td>
-                    @*<a href="@Url.Action("Salvar", "Transacao", new { id = transacao.Id })" class="icon icon-edit">Alterar</a>*@
                     @Html.PostLink(Url.Action("Apagar", new { id = transacao.Id }), "Apagar", "icon icon-del")
                 </td>
             </tr>

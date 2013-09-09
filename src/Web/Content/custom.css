@@ -1,0 +1,22 @@
+﻿body, input {
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 9pt;
+}
+
+.nav {
+    font-size: 10pt;
+}
+
+.well  {
+    padding: 10px 8px 10px 8px;
+}
+
+.navbar-inverse .nav > li > a {
+    color: #ccc;
+}
+
+.navbar-inverse .nav > li > a:hover, .nav-list > li > a:hover {
+    text-decoration: underline;
+}
+
+.alert ul { margin-bottom: 0px;}

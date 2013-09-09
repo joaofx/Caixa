@@ -16,7 +16,7 @@
             {
                 filterContext.Result = new ViewResult
                 {
-                    ViewName = "Fechado",
+                    ViewName = "SemMovimento",
                     ViewData = filterContext.Controller.ViewData
                 };
             }
