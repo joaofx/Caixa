@@ -28,7 +28,7 @@ namespace Core.Services
         {
             var movimento = this.movimentoRepository.GetAtual();
             var caixa = this.contaRepository.ById(Conta.CaixaId);
-            var conta = this.contaRepository.ById(Conta.ContaCorrenteId);
+            var conta = this.contaRepository.ById(Conta.ItauId);
 
             var somaDoCaixa = caixa.Saldo + this.transacaoRepository.SumByConta(movimento, caixa.Id);
             var somaDaConta = conta.Saldo + this.transacaoRepository.SumByConta(movimento, conta.Id);
@@ -69,7 +69,7 @@ namespace Core.Services
             }
 
             var caixa = this.contaRepository.ById(Conta.CaixaId);
-            var conta = this.contaRepository.ById(Conta.ContaCorrenteId);
+            var conta = this.contaRepository.ById(Conta.ItauId);
 
             this.transacaoRepository.Save(new Transacao(movimento)
             {

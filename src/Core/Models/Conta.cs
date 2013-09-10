@@ -5,7 +5,7 @@ namespace Core.Models
     public class Conta : Entity
     {
         public const long CaixaId = 1;
-        public const long ContaCorrenteId = 2;
+        public const long ItauId = 2;
 
         public Conta()
         {

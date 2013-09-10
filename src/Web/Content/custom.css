@@ -20,3 +20,11 @@
 }
 
 .alert ul { margin-bottom: 0px;}
+
+.positive { color: green; }
+.negative { color: red; }
+
+.table th.right,
+.table td.right {
+  text-align: right;
+}

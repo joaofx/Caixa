@@ -57,7 +57,7 @@
             using (this.unitOfWork.Begin())
             {
                 this.caixa = this.contaRepository.ById(Conta.CaixaId);
-                this.itau = this.contaRepository.ById(Conta.ContaCorrenteId);
+                this.itau = this.contaRepository.ById(Conta.ItauId);
 
                 this.proLabore = this.categoriaRepository.ByNome("Pró-Labore");
                 this.aluguel = this.categoriaRepository.ByNome("Aluguel");
@@ -104,7 +104,7 @@
         private void Saldos_de_01_do_10()
         {
             this.caixa = this.contaRepository.ById(Conta.CaixaId);
-            this.itau = this.contaRepository.ById(Conta.ContaCorrenteId);
+            this.itau = this.contaRepository.ById(Conta.ItauId);
 
             this.caixa.Saldo.ShouldEqual(5.39m);
             this.itau.Saldo.ShouldEqual(161.05m);
@@ -129,7 +129,7 @@
         private void Saldos_de_02_do_10()
         {
             this.caixa = this.contaRepository.ById(Conta.CaixaId);
-            this.itau = this.contaRepository.ById(Conta.ContaCorrenteId);
+            this.itau = this.contaRepository.ById(Conta.ItauId);
 
             this.caixa.Saldo.ShouldEqual(498.19m);
             this.itau.Saldo.ShouldEqual(529.25m);
@@ -163,7 +163,7 @@
         private void Saldos_de_03_do_10()
         {
             this.caixa = this.contaRepository.ById(Conta.CaixaId);
-            this.itau = this.contaRepository.ById(Conta.ContaCorrenteId);
+            this.itau = this.contaRepository.ById(Conta.ItauId);
 
             this.caixa.Saldo.ShouldEqual(550m);
             this.itau.Saldo.ShouldEqual(440m);
@@ -197,7 +197,7 @@
         private void Saldos_de_04_do_10()
         {
             this.caixa = this.contaRepository.ById(Conta.CaixaId);
-            this.itau = this.contaRepository.ById(Conta.ContaCorrenteId);
+            this.itau = this.contaRepository.ById(Conta.ItauId);
 
             this.caixa.Saldo.ShouldEqual(570m);
             this.itau.Saldo.ShouldEqual(370.55m);

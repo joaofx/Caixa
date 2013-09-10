@@ -19,7 +19,7 @@
         public override void Scenario()
         {
             this.caixa = new Conta(Conta.CaixaId) { Saldo = 100 };
-            this.conta = new Conta(Conta.ContaCorrenteId) { Saldo = 200 };
+            this.conta = new Conta(Conta.ItauId) { Saldo = 200 };
             this.movimento = new Movimento(DateTime.Parse("27/08/2013")) { Id = 30 };
 
             this.Get<IMovimentoRepository>()

@@ -2,6 +2,7 @@
 @{
     ViewBag.SideBar = false;
     ViewBag.Title = "Transações do dia " + Model.MovimentoAtual.Data.Show();
+    var contaAtual = Request.QueryString["conta"].ToLong();
 }
 
 @section sidebar
@@ -10,10 +11,10 @@
 }
 
 <div>
-    <ul class="nav nav-pills">
-      <li><a href="@Url.Action("Index")">Todas as contas</a></li>
-      <li><a href="@Url.Action("Index", new { conta = Conta.CaixaId })">Caixa</a></li>
-      <li><a href="@Url.Action("Index", new { conta = Conta.ContaCorrenteId })">Itaú</a></li>
+    <ul class="btn-group">
+      @LinkTodasContas(contaAtual)
+      @LinkConta("Caixa", Conta.CaixaId, contaAtual)
+      @LinkConta("Itaú", Conta.ItauId, contaAtual)
     </ul>
 </div>
 
@@ -34,7 +35,7 @@ else
         @foreach (var transacao in Model.Transacoes)
         {
             <tr>
-                <td>@Show.Conta(transacao.Conta)</td>
+                <td class="span2">@Show.Conta(transacao.Conta)</td>
                 <td>@transacao.Categoria.Nome</td>
                 <td class="right">@Show.Decimal(transacao.Valor)</td>
                 <td>@transacao.Descricao</td>
@@ -44,4 +45,17 @@ else
             </tr>
         }
     </table>
+}
+
+@helper LinkTodasContas(long contaAtual)
+{
+    var cssClass = contaAtual == 0 ? "active" : "";
+    <li class="btn @cssClass"><a href="@Url.Action("Index")">Todas as contas</a></li>
+}
+
+
+@helper LinkConta(string nome, long id, long contaAtual)
+{
+    var cssClass = contaAtual == id ? "active" : "";
+    <li class="btn @cssClass"><a href="@Url.Action("Index", new { conta = @id })">@nome</a></li>
 }

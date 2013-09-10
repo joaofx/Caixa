@@ -13,7 +13,7 @@ namespace Infra.Repositories
             return new List<Conta>
             {
                 new Conta(Conta.CaixaId, "Caixa"),
-                new Conta(Conta.ContaCorrenteId, "Conta Corrente")
+                new Conta(Conta.ItauId, "Itaú")
             }.AsReadOnly();
         }
 
