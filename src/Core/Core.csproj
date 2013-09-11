@@ -60,6 +60,7 @@
     <Compile Include="Boot\DependencyRegistry.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Conta.cs" />
+    <Compile Include="Models\FluxoCaixa.cs" />
     <Compile Include="Models\Movimento.cs" />
     <Compile Include="Models\MovimentoStatus.cs" />
     <Compile Include="Models\RegraVioladaException.cs" />

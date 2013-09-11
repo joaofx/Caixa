@@ -1,4 +1,4 @@
-﻿namespace IntegrationTests.Integracao.Maps
+﻿namespace IntegrationTests.Maps
 {
     using Core.Models;
     using Felice.TestFramework;

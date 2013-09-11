@@ -1,4 +1,4 @@
-﻿namespace IntegrationTests.Integracao.Repositories
+﻿namespace IntegrationTests.Repositories
 {
     using Core.Models;
     using Felice.TestFramework;

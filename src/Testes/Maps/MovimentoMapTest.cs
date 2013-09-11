@@ -1,4 +1,4 @@
-﻿namespace IntegrationTests.Integracao.Maps
+﻿namespace IntegrationTests.Maps
 {
     using System;
     using Core.Models;
