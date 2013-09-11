@@ -1,25 +1,30 @@
 ﻿@model EditarTransferenciaForm
+
 @{ ViewBag.Title = "Nova Transferência"; }
+
+@section sidebar
+{
+    @Html.Partial("_Sidebar")
+}
 
 @using (Html.BeginForm("Editar", "Transferencia"))
 {
     @Html.HiddenFor(x => x.Id)
 
-    <div class="form">
+   <fieldset>
+        
+        <div>De:</div>
+        <div>@Html.DropDownListFor(x => x.ContaOrigemId, new SelectList(Model.Contas, "Id", "Nome", Model.ContaOrigemId), new { style = "width: 200px" })</div>
+
+        <div>Para:</div>
+        <div>@Html.DropDownListFor(x => x.ContaDestinoId, new SelectList(Model.Contas, "Id", "Nome", Model.ContaDestinoId), new { style = "width: 200px" })</div>
+
+        <div>@Html.LabelFor(x => x.Valor)</div>
+        <div>@Html.EditorFor(x => x.Valor)</div>
+
         <p>
-            <div>De:</div>
-            <div>@Html.DropDownListFor(x => x.ContaOrigemId, new SelectList(Model.Contas, "Id", "Nome", Model.ContaOrigemId), new { style="width: 200px" })</div>
+            <input type="submit" value="Salvar" class="btn btn-primary" />
         </p>
-        <p>
-            <div>Para:</div>
-            <div>@Html.DropDownListFor(x => x.ContaDestinoId, new SelectList(Model.Contas, "Id", "Nome", Model.ContaDestinoId), new { style = "width: 200px" })</div>
-        </p>
-        <p>
-            <div>@Html.LabelFor(x => x.Valor)</div>
-            <div>@Html.TextBoxFor(x => x.Valor)</div>
-        </p>
-        <p>
-            <input type="submit" value="Salvar">        
-        </p>
-    </div>
+
+    </fieldset>
 }

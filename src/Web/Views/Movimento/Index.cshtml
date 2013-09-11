@@ -1,27 +1,28 @@
 ﻿@model ReadOnlyCollection<Movimento>
-@{ ViewBag.Title = "MovimentoRepository"; }
+
+@{ ViewBag.Title = "Movimentos"; }
+
+@section sidebar
+{
+    @Html.Partial("_Sidebar")
+}
+
+@if (this.Movimento() == null)
+{
+    <div class="row">
+        <ul class="btn-group">
+          @Link.AbrirMovimento(Url)
+        </ul>
+    </div>
+}
 
 @if (Model.Count == 0)
 {
-    <div class="flash nodata">Não há movimentos</div>
+    <div class="alert alert-info">Não há movimentos</div>
 }
 else
 {
-    if (this.Movimento() != null)
-    {
-        <p>
-            @Link.FecharMovimento(Url)    
-        </p>
-    }
-    else
-    {
-        <p>
-            @Link.AbrirMovimento(Url)    
-        </p>
-    }
-}
-
-<table class="list">
+    <table class="table table-condensed table-hover table-bordered table-striped">
         <tr>
             <th>Data</th>
             <th>Status</th>
@@ -38,8 +39,11 @@ else
                 <td>@Show.Decimal(@movimento.SaldoFinalCaixa)</td>
                 <td>@Show.Decimal(@movimento.SaldoFinalConta)</td>
                 <td>@Show.Decimal(@movimento.DiferencaNoCaixa)</td>
-                <td>@Show.Decimal(@movimento.Diferenca)</td>
+                <td>@Show.Decimal(@movimento.DiferencaNaConta)</td>
             </tr>
         }
-</table>
+    </table>
+}
+
+
 

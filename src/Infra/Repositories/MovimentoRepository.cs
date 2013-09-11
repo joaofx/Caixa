@@ -11,7 +11,7 @@ namespace Infra.Repositories
         public Movimento GetAnterior()
         {
             return this.Session.QueryOver<Movimento>()
-                .Where(x => x.Status == MovimentoStatus.Fechado)
+                .Where(x => x.Status != MovimentoStatus.Aberto)
                 .OrderBy(x => x.Data).Desc
                 .Take(1)
                 .SingleOrDefault();

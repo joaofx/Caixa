@@ -28,3 +28,7 @@
 .table td.right {
   text-align: right;
 }
+
+input, button, select, textarea {
+    font-family: Verdana;
+}

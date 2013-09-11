@@ -10,7 +10,7 @@
     @Html.Partial("_Sidebar")
 }
 
-<div>
+<div class="row">
     <ul class="btn-group">
       @LinkTodasContas(contaAtual)
       @LinkConta("Caixa", Conta.CaixaId, contaAtual)
@@ -39,7 +39,7 @@ else
                 <td>@transacao.Categoria.Nome</td>
                 <td class="right">@Show.Decimal(transacao.Valor)</td>
                 <td>@transacao.Descricao</td>
-                <td>
+                <td class="span1">
                     @Html.PostLink(Url.Action("Apagar", new { id = transacao.Id }), "Apagar", "icon icon-del")
                 </td>
             </tr>

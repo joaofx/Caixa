@@ -5,13 +5,15 @@
 - gasto [OK]
 - transferência [OK]
 - fechar movimento [OK]
-- fechar movimento com diferença
-- senha
-- refatorar
+- fechar movimento com diferença [OK]
+- senha [OK]
+- nao pode transferir de uma conta para a mesma conta
+- data do novo movimento deve ser maior que o movimento anterior
+- fluxo de caixa
 
 RELEASE 2
 
-- Amarrar transacao com movimento
+- Layout senha
 - Icones
 - Colocar auditoria (criador por, criado em) na transacao e movimento
 - Link para ver transacoes de um movimento

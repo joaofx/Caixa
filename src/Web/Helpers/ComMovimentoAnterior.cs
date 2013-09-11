@@ -10,7 +10,7 @@
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            filterContext.Controller.ViewBag.Movimento = 
+            filterContext.Controller.ViewBag.MovimentoAnterior = 
                 Dependency.Resolve<IMovimentoRepository>().GetAnterior();
         }
     }

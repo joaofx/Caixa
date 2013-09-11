@@ -1,9 +1,11 @@
 ﻿@model AbrirMovimentoForm
 
-@{ ViewBag.Title = "Novo Movimento"; }
+@{
+    ViewBag.Title = "Novo Movimento";
+}
 
 <div class="well">
-    @Show.MovimentoAnterior(Model.MovimentoAnterior)
+    @Show.MovimentoAnterior(this.MovimentoAnterior())
 </div>
 
 @using (Html.BeginForm("Abrir", "Movimento"))

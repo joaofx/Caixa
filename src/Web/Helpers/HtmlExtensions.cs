@@ -9,5 +9,10 @@
         {
             return page.ViewBag.Movimento;
         }
+
+        public static Movimento MovimentoAnterior<T>(this WebViewPage<T> page)
+        {
+            return page.ViewBag.MovimentoAnterior;
+        }
     }
 }

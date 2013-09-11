@@ -5,17 +5,17 @@
     <a href="@url.Action("Fechar", "Movimento")"><i class="fam-book-key"></i>Fechar Movimento Atual</a>
 }
 
-@helper AbrirMovimento(UrlHelper url)
+@helper AbrirMovimento(UrlHelper url, string texto = "Abrir Movimento")
 {
-    <a href="@url.Action("Abrir", "Movimento")" class="btn btn-success">Abrir Movimento</a>
+    <a href="@url.Action("Abrir", "Movimento")" class="btn btn-success">@texto</a>
 }
 
 @helper Transacoes(UrlHelper url)
 {
-    <a href="@url.Action("Index", "Transacao")">Transações</a>
+    <a href="@url.Action("Index", "Transacao")"><i class="fam-arrow-switch"></i>Transações</a>
 }
 
 @helper FluxoCaixa(UrlHelper url)
 {
-    <a href="@url.Action("Index", "FluxoCaixa")">Fluxo de Caixa</a>
+    <a href="@url.Action("Index", "FluxoCaixa")"><i class="fam-calculator"></i>Fluxo de Caixa</a>
 }

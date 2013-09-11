@@ -8,11 +8,11 @@
         switch (status)
         {
             case MovimentoStatus.Aberto:
-                return "label-green";
+                return "label";
             case MovimentoStatus.Fechado:
-                return "label-blue";
+                return "label label-success";
             case MovimentoStatus.FechadoComDiferenca:
-                return "label-red";
+                return "label label-important";
             default:
                 return string.Empty;
         }
@@ -44,7 +44,9 @@
 
 @helper MovimentoAnterior(Movimento movimento)
 {
-    <text>Movimento anterior: @(movimento != null ? movimento.Data.Show() : "Não há")</text>
+    <text>Movimento anterior: 
+        <strong>@(movimento != null ? movimento.Data.Show() : "Não há")</strong>
+    </text>
 }
 
 @helper Decimal(decimal value)

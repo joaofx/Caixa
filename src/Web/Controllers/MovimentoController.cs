@@ -21,9 +21,9 @@
             this.fechaMovimentoService = fechaMovimentoService;
         }
 
-        [ComMovimento]
         public ActionResult Index()
         {
+            ViewBag.Movimento = this.movimentoRepository.GetAtual();
             return View(this.movimentoRepository.Todos());
         }
 
@@ -38,13 +38,11 @@
                 return View("Aberto", movimento);
             }
 
-            return View(new AbrirMovimentoForm
-            {
-                MovimentoAnterior = this.MovimentoAnterior()
-            });
+            return View(new AbrirMovimentoForm());
         }
 
         [HttpPost]
+        [ComMovimentoAnterior]
         public ActionResult Abrir(AbrirMovimentoForm form)
         {
             return this.Handle(form)
@@ -56,12 +54,12 @@
         [ComMovimento]
         public ActionResult Fechar()
         {
-            if (this.Movimento() == null)
-            {
-                return View("Fechado");
-            }
-
             return View(new FecharMovimentoForm());
+        }
+
+        public ActionResult Fechado()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -69,21 +67,12 @@
         public ActionResult Fechar(FecharMovimentoForm form)
         {
             return this.Handle(form)
-                .With(x =>
-                {
-                    form.Fechamento = this.fechaMovimentoService.Fechar(
-                        form.SaldoCaixa.ToDecimal2(),
-                        form.SaldoConta.ToDecimal2());
-                })
-                .OnSuccess(x =>
-                {
-                    if (x.Fechamento.Batido == false)
-                    {
-                        return this.View("Diferenca", x);
-                    }
-
-                    return this.RedirectToAction("Index");
-                })
+                .With(x => form.Fechamento = this.fechaMovimentoService.Fechar(
+                    form.SaldoCaixa.ToDecimal2(),
+                    form.SaldoConta.ToDecimal2()))
+                .OnSuccess(x => x.Fechamento.Batido == false ? 
+                    (ActionResult) this.View("Diferenca", x) : 
+                    this.RedirectToAction("Fechado"))
                 .OnFailure(this.View);
         }
 
@@ -91,13 +80,10 @@
         public ActionResult FecharComDiferenca(FecharMovimentoForm form)
         {
             return this.Handle(form)
-                .With(x =>
-                {
-                    this.fechaMovimentoService.FecharComDiferenca(
-                        x.SaldoCaixa.ToDecimal2(),
-                        x.SaldoConta.ToDecimal2());
-                })
-                .OnSuccess(x => this.RedirectToAction("Index"), "Movimento foi fechado com diferença")
+                .With(x => this.fechaMovimentoService.FecharComDiferenca(
+                    x.SaldoCaixa.ToDecimal2(),
+                    x.SaldoConta.ToDecimal2()))
+                .OnSuccess(x => this.RedirectToAction("Fechado"))
                 .OnFailure(x => this.View("Fechar", x));
         }
     }

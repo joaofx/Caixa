@@ -1,5 +1,6 @@
 namespace Core.Services
 {
+    using System;
     using Felice.Core;
     using Models;
     using Repositories;
@@ -25,7 +26,11 @@ namespace Core.Services
 
         public Transferencia Transferir(long contaOrigemId, long contaDestinoId, decimal valor)
         {
-            //// TODO: validacao
+            if (contaOrigemId == contaDestinoId)
+            {
+                throw new RegraVioladaException("Conta de origem deve ser diferente da conta de destino");    
+            }
+            
             var contaOrigem = this.contaRepository.ById(contaOrigemId);
             var contaDestino = this.contaRepository.ById(contaDestinoId);
 
