@@ -1,26 +1,22 @@
 ﻿@model AbrirMovimentoForm
+
 @{ ViewBag.Title = "Novo Movimento"; }
 
-<div class="box">
+<div class="well">
+    @Show.MovimentoAnterior(Model.MovimentoAnterior)
+</div>
 
 @using (Html.BeginForm("Abrir", "Movimento"))
 {
     <fieldset>
         
-        <div>
-            @Show.MovimentoAnterior(Model.MovimentoAnterior)
-        </div>
-
-        <div>
-            <div>@Html.LabelFor(x => x.DataNovoMovimento)</div>
-            <div>@Html.TextBoxFor(x => x.DataNovoMovimento)</div>
-        </div>
-                   
-        <div>
-            <input type="submit" value="Abrir Movimento" />
+        <div>@Html.LabelFor(x => x.DataNovoMovimento)</div>
+        <div>@Html.TextBoxFor(x => x.DataNovoMovimento)</div>
+        
+        <div class="form-actions">
+            <input type="submit" value="Abrir Movimento" class="btn btn-primary" />
         </div>
 
     </fieldset>
 }
 
-</div>

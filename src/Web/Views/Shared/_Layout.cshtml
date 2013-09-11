@@ -1,6 +1,5 @@
 ﻿@{
     var isSideBarDefined = IsSectionDefined("sidebar");
-    var contentClass = isSideBarDefined ? "span10" : "span12";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +34,13 @@
                     </div>
                 </div>
             }
+            else
+            {
+                <div class="span1"></div>
+            }
 
-            <div class="@contentClass">
-                                   
+            <div class="span10">
+                       
                 <h4>@ViewBag.Title</h4>
 
                 @Html.GetSuccess("alert alert-success")
@@ -47,6 +50,11 @@
 
                 @RenderBody()
             </div>
+
+            @if (isSideBarDefined == false)
+            {
+                <div class="span1"></div>
+            }
 
         </div>
 

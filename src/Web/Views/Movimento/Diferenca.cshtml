@@ -1,11 +1,17 @@
-﻿@using Web.Controllers
-@model FecharMovimentoForm
+﻿@model FecharMovimentoForm
 
-@{ ViewBag.Title = "Fechando Movimento de " + Model.MovimentoData; }
+@{
+    ViewBag.Title = "Fechando Movimento de " + this.Movimento().Data.Show();
+}
 
-<div class="flash alert">Há diferença no saldo informado e o registrado nas transações</div>
+@section sidebar
+{
+    @Html.Partial("_Sidebar")
+}
 
-<table class="list">
+<div class="alert">Há diferença no saldo informado e o registrado nas transações</div>
+
+<table class="table table-condensed table-hover table-bordered table-striped">
     <tr>
         <th></th>
         <th>Saldo somado<br/> nas transações</th>
@@ -31,8 +37,10 @@
     @Html.HiddenFor(x => x.SaldoCaixa)
     @Html.HiddenFor(x => x.SaldoConta)
 
-    <a href="@Url.Action("Index", "Transacao")">Revisar transações</a>
-    <input type="submit" class="button red" value="Fechar movimento mesmo com diferença" />
+    <div class="form-actions">
+        <a href="@Url.Action("Index", "Transacao")">Revisar transações</a> ou 
+        <input type="submit" class="btn btn-danger" value="Fechar movimento mesmo com diferença" />
+    </div>
 }
 
 @helper MostrarDiferenca(decimal diferenca)

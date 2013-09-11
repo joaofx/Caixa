@@ -35,7 +35,7 @@
             if (movimento != null)
             {
                 this.Alert("Já existe um movimento aberto. Você deve fechar antes de abrir um novo movimento.");
-                return View("Aberto", this.Movimento());
+                return View("Aberto", movimento);
             }
 
             return View(new AbrirMovimentoForm
@@ -65,6 +65,7 @@
         }
 
         [HttpPost]
+        [ComMovimento]
         public ActionResult Fechar(FecharMovimentoForm form)
         {
             return this.Handle(form)

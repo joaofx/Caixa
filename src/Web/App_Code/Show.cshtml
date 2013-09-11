@@ -44,7 +44,7 @@
 
 @helper MovimentoAnterior(Movimento movimento)
 {
-    <h4>Movimento anterior: @(movimento != null ? movimento.Data.Show() : "Não há")</h4>
+    <text>Movimento anterior: @(movimento != null ? movimento.Data.Show() : "Não há")</text>
 }
 
 @helper Decimal(decimal value)
