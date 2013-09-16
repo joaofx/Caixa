@@ -1,0 +1,38 @@
+﻿@model FluxoCaixa[]
+
+@{ ViewBag.Title = "Movimentos"; }
+
+@section sidebar
+{
+    @Html.Partial("_Sidebar")
+}
+
+@if (Model.Length == 0)
+{
+    <div class="alert alert-info">Não há fluxo de caixa disponível</div>
+}
+else
+{
+    <table class="table table-condensed table-hover table-bordered table-striped">
+        <tr>
+            <th>Data</th>
+            <th>Saldo Anterior</th>
+            <th>Entradas</th>
+            <th>Saídas</th>
+            <th>Saldo do Dia</th>
+        </tr>
+        @foreach (var fluxo in Model)
+        {
+            <tr>
+                <td>@fluxo.Data.Show()</td>
+                <td>@Show.Decimal(@fluxo.SaldoAnterior)</td>
+                <td>@Show.Decimal(@fluxo.Entradas)</td>
+                <td>@Show.Decimal(@fluxo.Saidas)</td>
+                <td>@Show.Decimal(@fluxo.Saldo)</td>
+            </tr>
+        }
+    </table>
+}
+
+
+

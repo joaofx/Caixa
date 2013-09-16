@@ -76,6 +76,7 @@
     <Compile Include="Models\Fechamento.cs" />
     <Compile Include="Services\AutenticacaoService.cs" />
     <Compile Include="Services\FechaMovimentoService.cs" />
+    <Compile Include="Services\FluxoCaixaService.cs" />
     <Compile Include="Services\GastoService.cs" />
     <Compile Include="Services\RecebimentoService.cs" />
     <Compile Include="Services\SalvaTransacaoService.cs" />

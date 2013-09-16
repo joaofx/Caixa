@@ -1,35 +1,23 @@
 ﻿namespace Web.Controllers
 {
-    using System.Collections.Generic;
-    using Core.Models;
-    using Core.Repositories;
+    using System;
     using Core.Services;
     using System.Web.Mvc;
 
     public class FluxoCaixaController : Controller
     {
-        private readonly IMovimentoRepository movimentoRepository;
-        private readonly AbreMovimentoService abreMovimentoService;
-        private readonly FechaMovimentoService fechaMovimentoService;
+        private readonly FluxoCaixaService fluxoCaixaService;
 
-        public FluxoCaixaController(IMovimentoRepository movimentoRepository, AbreMovimentoService abreMovimentoService, FechaMovimentoService fechaMovimentoService)
+        public FluxoCaixaController(FluxoCaixaService fluxoCaixaService)
         {
-            this.movimentoRepository = movimentoRepository;
-            this.abreMovimentoService = abreMovimentoService;
-            this.fechaMovimentoService = fechaMovimentoService;
+            this.fluxoCaixaService = fluxoCaixaService;
         }
 
         public ActionResult Index()
         {
-            var movimentos = this.movimentoRepository.Todos();
-            var fluxos = new List<FluxoCaixa>();
-            var saldoAnterior = 0;
-
-            foreach (var movimento in movimentos)
-            {
-            }
-
-            return View();
+            return View(this.fluxoCaixaService.Obter(
+                DateTime.Today.AddDays(-30), 
+                DateTime.Today));
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Core.Models
         public virtual DateTime Data
         {
             get;
-            protected set;
+            set;
         }
 
         public virtual Movimento Movimento

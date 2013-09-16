@@ -1,0 +1,49 @@
+﻿@model ReadOnlyCollection<Transacao>
+@{
+    Movimento movimento = ViewBag.Movimento;
+    ViewBag.SideBar = false;
+    ViewBag.Title = "Transações do dia " + movimento.Data.Show();
+}
+
+@section sidebar
+{
+    @Html.Partial("_Sidebar")
+}
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">Não há transações cadastradas</div>
+}
+else
+{
+    <table class="table table-condensed table-hover table-bordered table-striped">
+        <tr>
+            <th>Conta</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+        </tr>
+        @foreach (var transacao in Model)
+        {
+            <tr>
+                <td class="span2">@Show.Conta(transacao.Conta)</td>
+                <td>@transacao.Categoria.Nome</td>
+                <td class="right">@Show.Decimal(transacao.Valor)</td>
+                <td>@transacao.Descricao</td>
+            </tr>
+        }
+    </table>
+}
+
+@helper LinkTodasContas(long contaAtual)
+{
+    var cssClass = contaAtual == 0 ? "active" : "";
+    <li class="btn @cssClass"><a href="@Url.Action("Index")">Todas as contas</a></li>
+}
+
+
+@helper LinkConta(string nome, long id, long contaAtual)
+{
+    var cssClass = contaAtual == id ? "active" : "";
+    <li class="btn @cssClass"><a href="@Url.Action("Index", new { conta = @id })">@nome</a></li>
+}

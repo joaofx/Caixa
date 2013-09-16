@@ -36,5 +36,15 @@ namespace Web.Controllers
             this.Success("Schema atualizado");
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult Limpar()
+        {
+            UnitOfWork.CurrentSession.CreateSQLQuery("delete from transacao").ExecuteUpdate();
+            UnitOfWork.CurrentSession.CreateSQLQuery("delete from movimento").ExecuteUpdate();
+            UnitOfWork.CurrentSession.CreateSQLQuery("update conta set saldo=0").ExecuteUpdate();
+            this.Success("Base limpa com sucesso");
+            return RedirectToAction("Index");
+        }
     }
 }

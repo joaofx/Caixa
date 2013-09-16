@@ -40,12 +40,14 @@ namespace Infra.Repositories
                     new Categoria(i++, "Músicos"),
                     new Categoria(i++, "Materiais"),
                 }),
-                new Categoria(i++, "Pessoal", new List<Categoria>()
+                new Categoria(i++, "Funcionários", new List<Categoria>()
                 {
                     new Categoria(i++, "Salário Tereza"),
+                    new Categoria(i++, "Salário Atendimento"),
+                    new Categoria(i++, "Salário Carrinho"),
                     new Categoria(i++, "Transporte"),
                     new Categoria(i++, "Pró-Labore"),
-                    new Categoria(i++, "Free-Lance"),
+                    new Categoria(i++, "Free-Lancer"),
                 }),
                 new Categoria(i++, "Impostos", new List<Categoria>()
                 {

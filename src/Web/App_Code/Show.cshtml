@@ -56,4 +56,8 @@
         var spanClass = value > 0 ? "positive" : "negative";
         <span class="@spanClass">@value.Show()</span>
     }
+    else
+    {
+        <text>@value.Show()</text>
+    }
 }

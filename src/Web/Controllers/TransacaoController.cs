@@ -15,12 +15,14 @@
         private readonly TransacaoRepository transacaoRepository;
         private readonly ContaRepository contaRepository;
         private readonly SalvaTransacaoService salvaTransacaoService;
+        private readonly MovimentoRepository movimentoRepository;
 
-        public TransacaoController(TransacaoRepository transacaoRepository, ContaRepository contaRepository, SalvaTransacaoService salvaTransacaoService)
+        public TransacaoController(TransacaoRepository transacaoRepository, ContaRepository contaRepository, SalvaTransacaoService salvaTransacaoService, MovimentoRepository movimentoRepository)
         {
             this.transacaoRepository = transacaoRepository;
             this.contaRepository = contaRepository;
             this.salvaTransacaoService = salvaTransacaoService;
+            this.movimentoRepository = movimentoRepository;
         }
 
         [ComMovimento]
@@ -78,6 +80,13 @@
                 .With(x => this.transacaoRepository.DeleteById(x))
                 .OnSuccess(x => this.RedirectToAction("Index"), "Transação apagada com sucesso")
                 .OnFailure(x => this.RedirectToAction("Index"));
+        }
+
+        public ActionResult Listar(int movimento)
+        {
+            var movimentoById = @ViewBag.Movimento = this.movimentoRepository.ById(movimento);
+            var transacoes = this.transacaoRepository.AllByMovimento(movimentoById);
+            return View(transacoes);
         }
     }
 }

@@ -27,9 +27,10 @@ else
             <th>Data</th>
             <th>Status</th>
             <th>Saldo no Caixa</th>
-            <th>Saldo na Conta Corrente</th>
+            <th>Saldo na Conta <br/>Corrente</th>
             <th>Diferença no Caixa</th>
-            <th>Diferença na Conta Corrente</th>
+            <th>Diferença na <br/>Conta Corrente</th>
+            <th></th>
         </tr>
         @foreach (var movimento in Model)
         {
@@ -40,6 +41,9 @@ else
                 <td>@Show.Decimal(@movimento.SaldoFinalConta)</td>
                 <td>@Show.Decimal(@movimento.DiferencaNoCaixa)</td>
                 <td>@Show.Decimal(@movimento.DiferencaNaConta)</td>
+                <td>
+                    <a href="@Url.Action("Listar", "Transacao", new { movimento = movimento.Id })">Transações</a>
+                </td>
             </tr>
         }
     </table>

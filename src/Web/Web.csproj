@@ -387,6 +387,8 @@
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Transacao\Index.cshtml" />
     <Content Include="Views\Movimento\Fechado.cshtml" />
+    <Content Include="Views\FluxoCaixa\Index.cshtml" />
+    <Content Include="Views\Transacao\Listar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

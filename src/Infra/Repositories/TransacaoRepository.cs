@@ -1,10 +1,12 @@
 namespace Infra.Repositories
 {
+    using System;
     using System.Collections.ObjectModel;
     using Core.Models;
     using Core.Repositories;
     using Felice.Core;
     using Felice.Data;
+    using NHibernate.Criterion;
 
     public class TransacaoRepository : RepositoryBase<Transacao>, ITransacaoRepository
     {
@@ -36,10 +38,18 @@ where
     t.Data = :data and 
     c.Id = :contaId";
 
-            return UnitOfWork.CurrentSession.CreateQuery(Hql)
+            return this.Session.CreateQuery(Hql)
                 .SetParameter("data", movimento.Data)
                 .SetParameter("contaId", contaId)
                 .UniqueResult<decimal>();
+        }
+
+        public ReadOnlyCollection<Transacao> AllByDate(DateTime dataInicial, DateTime dataFinal)
+        {
+            return this.Session.QueryOver<Transacao>()
+                .Where(Restrictions.Between("Data", dataInicial, dataFinal))
+                .List()
+                .AsReadOnly();
         }
     }
 }

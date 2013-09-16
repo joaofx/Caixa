@@ -30,6 +30,7 @@
         private Categoria energia;
         private AbreMovimentoService abreMovimentoService;
         private IUnitOfWork unitOfWork;
+        private FluxoCaixaService fluxoCaixaService;
 
         [SetUp]
         public void Setup()
@@ -42,6 +43,7 @@
             this.gastoService = Dependency.Resolve<GastoService>();
             this.recebimentoService = Dependency.Resolve<RecebimentoService>();
             this.abreMovimentoService = Dependency.Resolve<AbreMovimentoService>();
+            this.fluxoCaixaService = Dependency.Resolve<FluxoCaixaService>();
 
             using (this.unitOfWork.Begin())
             {
