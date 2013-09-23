@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="AcceptanceHelper.cs" />
     <Compile Include="Boot\DependencyRegistry.cs" />
+    <Compile Include="Maps\TransacaoMapTest.cs" />
     <Compile Include="Repositories\CategoriaRepositoryTest.cs" />
     <Compile Include="Aceitacao\AceitacaoTest.cs" />
     <Compile Include="DatabaseCleaner.cs" />

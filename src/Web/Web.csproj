@@ -217,6 +217,7 @@
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
     <Compile Include="Boot\DependencyRegistry.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\PendenciasController.cs" />
     <Compile Include="Controllers\FluxoCaixaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SenhaController.cs" />

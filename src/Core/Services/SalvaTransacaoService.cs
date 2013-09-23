@@ -5,16 +5,16 @@ namespace Core.Services
 
     public class SalvaTransacaoService
     {
-        private readonly GastoService gastoService;
+        private readonly IGastoService gastoService;
         private readonly IContaRepository contaRepository;
         private readonly ICategoriaRepository categoriaRepository;
-        private readonly RecebimentoService recebimentoService;
+        private readonly IRecebimentoService recebimentoService;
 
         public SalvaTransacaoService(
-            GastoService gastoService,
+            IGastoService gastoService,
             IContaRepository contaRepository, 
             ICategoriaRepository categoriaRepository, 
-            RecebimentoService recebimentoService)
+            IRecebimentoService recebimentoService)
         {
             this.gastoService = gastoService;
             this.contaRepository = contaRepository;
@@ -22,18 +22,18 @@ namespace Core.Services
             this.recebimentoService = recebimentoService;
         }
 
-        public void Processar(TipoTransacao tipo, long contaId, long categoriaId, decimal valor)
+        public void Processar(TipoTransacao tipo, long contaId, long categoriaId, decimal valor, string descricao = "")
         {
             var conta = this.contaRepository.ById(contaId);
             var categoria = this.categoriaRepository.ById(categoriaId);
 
             if (tipo == TipoTransacao.Gasto)
             {
-                this.gastoService.Lancar(conta, categoria, valor);
+                this.gastoService.Lancar(conta, categoria, valor, descricao);
             }
             else if (tipo == TipoTransacao.Recebimento)
             {
-                this.recebimentoService.Lancar(conta, categoria, valor);
+                this.recebimentoService.Lancar(conta, categoria, valor, descricao);
             }
 
             // TODO: throw

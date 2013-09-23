@@ -38,6 +38,7 @@
             });
         }
 
+        [ComMovimento]
         public ActionResult Nova(TipoTransacao tipo)
         {
             return this.View("Editar", new EditarTransacaoForm
@@ -48,6 +49,7 @@
             });
         }
 
+        [ComMovimento]
         public ActionResult Editar(long id)
         {
             var transacao = this.transacaoRepository.ById(id);

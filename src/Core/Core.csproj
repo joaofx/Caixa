@@ -60,6 +60,7 @@
     <Compile Include="Boot\DependencyRegistry.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Conta.cs" />
+    <Compile Include="Models\Pendencia.cs" />
     <Compile Include="Models\FluxoCaixa.cs" />
     <Compile Include="Models\Movimento.cs" />
     <Compile Include="Models\MovimentoStatus.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Models\Transacao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPendenciaRepository.cs" />
     <Compile Include="Repositories\IContaRepository.cs" />
     <Compile Include="Repositories\ICategoriaRepository.cs" />
     <Compile Include="Repositories\IMovimentoRepository.cs" />
@@ -78,6 +80,8 @@
     <Compile Include="Services\FechaMovimentoService.cs" />
     <Compile Include="Services\FluxoCaixaService.cs" />
     <Compile Include="Services\GastoService.cs" />
+    <Compile Include="Services\IGastoService.cs" />
+    <Compile Include="Services\IRecebimentoService.cs" />
     <Compile Include="Services\RecebimentoService.cs" />
     <Compile Include="Services\SalvaTransacaoService.cs" />
     <Compile Include="Models\Transferencia.cs" />

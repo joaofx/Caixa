@@ -23,13 +23,14 @@
                 .Stub(x => x.GetAtual())
                 .Return(movimento);
 
-            var transacao = this.ClassUnderTest.Lancar(conta, categoria, 15.99m);
+            var transacao = this.ClassUnderTest.Lancar(conta, categoria, 15.99m, "compras");
 
             transacao.Conta.ShouldEqual(conta);
             transacao.Categoria.ShouldEqual(categoria);
             transacao.Movimento.ShouldEqual(movimento);
             transacao.Data.ShouldEqual(DateTime.Parse("22/08/2013"));
             transacao.Valor.ShouldEqual(15.99m);
+            transacao.Descricao.ShouldEqual("compras");
         }
     }
 }

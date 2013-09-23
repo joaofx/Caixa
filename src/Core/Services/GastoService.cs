@@ -4,7 +4,7 @@ namespace Core.Services
     using Models;
     using Repositories;
 
-    public class GastoService
+    public class GastoService : IGastoService
     {
         private readonly IMovimentoRepository movimentoRepository;
         private readonly ITransacaoRepository transacaoRepository;
@@ -17,7 +17,7 @@ namespace Core.Services
             this.transacaoRepository = transacaoRepository;
         }
 
-        public Transacao Lancar(Conta conta, Categoria categoria, decimal valor)
+        public Transacao Lancar(Conta conta, Categoria categoria, decimal valor, string descricao = "")
         {
             var movimento = this.movimentoRepository.GetAtual();
 
@@ -26,7 +26,8 @@ namespace Core.Services
                 Categoria = categoria,
                 Conta = conta,
                 Tipo = TipoTransacao.Gasto,
-                Valor = valor.Negative()
+                Valor = valor.Negative(),
+                Descricao = descricao
             };
 
             this.transacaoRepository.Save(transacao);
