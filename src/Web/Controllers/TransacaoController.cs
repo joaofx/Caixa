@@ -65,7 +65,8 @@
                     form.Tipo,
                     form.ContaId.ToLong(),
                     form.CategoriaId.ToLong(),
-                    form.Valor.ToDecimal2()))
+                    form.Valor.ToDecimal2(),
+                    form.Descricao))
                 .OnSuccess(x => this.RedirectToAction("Index"), "Transação salva com sucesso")
                 .OnFailure(x =>
                 {
