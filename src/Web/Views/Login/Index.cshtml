@@ -4,28 +4,22 @@
     Layout =  "~/Views/Shared/Master.cshtml";
 }
 
-<div id="content">  
-<div id="login" class="box">
-    
-    @using (Html.BeginForm<LoginController>(x => x.Index(null)))
-    {
-        <fieldset>
-            <legend>Autenticação</legend>
+<div class="container">
+
+    <div id="login" class="box">
+
+        @using (Html.BeginForm<LoginController>(x => x.Index(null), FormMethod.Post, new { @class="form-signin" }))
+        {
+            <h2 class="form-signin-heading">Autenticacao</h2>
             
-                @Html.GetError()
-                @Html.ShowValidationSummary()
+            @Html.GetError()
+            @Html.ShowValidationSummary()
 
-            <div>
-                <div>@Html.LabelFor(x => x.Senha)</div>
-                <div>@Html.PasswordFor(x => x.Senha, new { style = "width: 300px" })</div>
-            </div>
-                        
-            <div>
-                <input type="submit" value="Entrar" />
-            </div>
+            @Html.LabelFor(x => x.Senha)
+            @Html.PasswordFor(x => x.Senha, new { @class = "sr-only" })
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        }
 
-        </fieldset>
-    }
-
-</div>    
+    </div>
 </div>

@@ -6,7 +6,7 @@ namespace Core.Services
     {
         public void Autenticar(string senha)
         {
-            if (senha.ToLower().Equals("foca") == false)
+            if (senha.ToLower().Equals("admin") == false)
             {
                 throw new RegraVioladaException("Senha inválida");
             }
