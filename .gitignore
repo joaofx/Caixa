@@ -159,3 +159,6 @@ $RECYCLE.BIN/
 /src/*.userprefs
 
 /src/Web/*.DotSettings
+
+.vs
+_bin_deployableAssemblies
